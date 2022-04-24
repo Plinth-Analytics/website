@@ -399,7 +399,7 @@ pluralizelisttitles = false
     default_sharing_image = "img/sharing-default.png"
 
     # Google Maps widget: If `googleMapsApiKey` is not set, no key will be passed to Google (which likely results in a broken map widget).
-    enableGoogleMaps = true
+    enableGoogleMaps = false
     googleMapsApiKey = "AIzaSyAv7Sza8NSp9_l_g8G2vlo0H4ydEPn_2jY"
 
     latitude = "-12.043333"
@@ -422,7 +422,7 @@ pluralizelisttitles = false
     # - you're done. Happy mailing!
     #
     # Enable the contact form by entering your Formspree.io endpoint url
-    formspree_action = "https://formspree.io/sample/of/endpoint"
+    formspree_action = "https://formspree.io/f/myyobyvo"
     contact_form_ajax = false
 
     # Formspree form supports Google reCAPTCHA Key (type v2).

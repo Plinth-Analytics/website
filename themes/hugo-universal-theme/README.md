@@ -19,7 +19,6 @@ This Hugo theme was ported from [Bootstrapious](http://bootstrapious.com/p/unive
 
 - [Universal Theme for Hugo](#universal-theme-for-hugo)
   - [Table of Contents](#table-of-contents)
-  - [Features](#features)
   - [Installation](#installation)
   - [Configuration](#configuration)
     - [Language](#language)
