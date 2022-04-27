@@ -1,6 +1,6 @@
 baseurl: https://nanx.me/hugo-renga/
-title: Hugo Renga Theme Demo
-author: Jane Doe
+title: Plinth Analytics
+author: Plinth Analytics
 canonifyurls: yes
 languagecode: en
 paginate: 3
@@ -13,26 +13,29 @@ ignoreFiles:
   - _files$
   - _cache$
 params:
-  copyright: © 2018 Jane Doe
+  copyright: © 2022 Plinth Analytics
   copyrightUrl: https://nanx.me/hugo-renga/
-  email: example@example.com
-  faviconfile: image/favicon.png
-  github: nanxstats
+  email: info@plinthanalytics.com
+  faviconfile: image/logo.png
+  github: Plinth-Analytics
   highlightjs: yes
-  linkedin: nanxstats
-  logofile: image/avatar.png
-  pagetitle: Jane Doe
+  linkedin: nathanieldphillips
+  logofile: image/plinth_logo_vertical.png
+  pagetitle: Plinth Analytics
   posts_navigation: yes
   progressively: no
-  twitter: nanxstats
   uselatex: yes
 menu:
   primary:
+    - identifier: home
+      name: home
+      url: /
+      weight: 1
     - identifier: about
       name: About
       url: /about/
-      weight: 1
+      weight: 2
     - identifier: blog
       name: Blog
       url: /blog/
-      weight: 2
+      weight: 3

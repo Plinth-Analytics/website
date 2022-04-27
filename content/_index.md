@@ -1,12 +1,13 @@
 ---
-date: "2018-11-09"
+date: "2022-04-27"
 description: Website description.
 menu: main
-title: The Renga Theme for Hugo
+title: Plinth Analytics
 ---
 
-Lorem ipsum dolor sit amet, ex has sale ullum corrumpit, sea dicam nostrum sensibus ad. Porro tritani persecuti te sed. Omittam dissentias pro ex. Atqui luptatum duo id. Eros minim eam ex, novum elitr accusam quo in. Nec ne audire euripidis, [mea qualisque consetetur cu](https://nanx.me). Suspendisse volutpat sem a risus euismod convallis.
 
-In modus congue feugait eos. In nec nonumy volutpat corrumpit, sea assentior quaerendum no, cum affert scripta ea. No nihil voluptaria pro. [Erat democritum mei no](https://nanx.me), homero quodsi aliquando id mel, ridens civibus molestiae et nam.
+> Enable life science companies to efficiently obtain meaningful, robust, and repeatable insights from real-world health care data.
+>
+> Plinth Mission Statement
 
-Ea eam postea facilisi. Nullam forensibus consequuntur usu ea, no ius consul delectus periculis. Eam veri numquam an. Et partiendo gubergren eam. Quod iudicabit has ex, eam diam facilisi eu, elitr aliquip no eum.
+Life science companies have access to an unprecedented amount of real-world health care data (RWD). This data source has the potential to revolutionize life science research and drug development. However, life science companies often struggle to quickly and robustly generate use-case specific business insights from their portfolio of RWD. This data-to-insight gap represents an underserved opportunity that Plinth will solve. 

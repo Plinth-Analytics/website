@@ -2,11 +2,7 @@
 date: "2014-04-09"
 description: About description.
 menu: main
-title: About Jane
+title: About Plinth
 ---
 
-Lorem ipsum dolor sit amet, ex has sale ullum corrumpit, sea dicam nostrum sensibus ad. Porro tritani persecuti te sed. Omittam dissentias pro ex. Atqui luptatum duo id. Eros minim eam ex, novum elitr accusam quo in. Nec ne audire euripidis, [mea qualisque consetetur cu](https://nanx.me). Suspendisse volutpat sem a risus euismod convallis.
-
-In modus congue feugait eos. In nec nonumy volutpat corrumpit, sea assentior quaerendum no, cum affert scripta ea. No nihil voluptaria pro. [Erat democritum mei no](https://nanx.me), homero quodsi aliquando id mel, ridens civibus molestiae et nam.
-
-Ea eam postea facilisi. Nullam forensibus consequuntur usu ea, no ius consul delectus periculis. Eam veri numquam an. Et partiendo gubergren eam. Quod iudicabit has ex, eam diam facilisi eu, elitr aliquip no eum.
+Plinth was co-founded by Kieran Mace, PhD and Nathaniel Phillips, PhD – two scientific leaders at the intersection of Pharma, RWD generation, and Data Science, who have dedicated their careers to realizing RWD’s potential to deliver value to the life sciences. With leadership experience developing RWD products from medical records, and leveraging that RWD in the pharmaceutical industry, we created Plinth to empower life science teams to efficiently and robustly translate RWD into business value. 
