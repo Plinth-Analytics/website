@@ -35,7 +35,12 @@ menu:
       name: About
       url: /about/
       weight: 2
+    - identifier: contact
+      name: Contact
+      url: /contact/
+      weight: 3
     - identifier: blog
       name: Blog
       url: /blog/
-      weight: 3
+      weight: 4
+
