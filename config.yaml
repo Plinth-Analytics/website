@@ -1,4 +1,4 @@
-baseurl: https://nanx.me/hugo-renga/
+baseurl: https://silly-haupia-2459d1.netlify.app/
 title: Plinth Analytics
 author: Plinth Analytics
 canonifyurls: yes
@@ -13,7 +13,7 @@ ignoreFiles:
   - _cache$
 params:
   copyright: © 2022 Plinth Analytics
-  copyrightUrl: https://nanx.me/hugo-renga/
+  copyrightUrl: https://silly-haupia-2459d1.netlify.app/
   email: info@plinthanalytics.com
   faviconfile: image/logo.png
   github: Plinth-Analytics
