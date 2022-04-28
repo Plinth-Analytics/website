@@ -10,7 +10,6 @@ hasCJKLanguage: yes
 ignoreFiles:
   - \.Rmd$
   - \.Rmarkdown$
-  - _files$
   - _cache$
 params:
   copyright: © 2022 Plinth Analytics
@@ -48,3 +47,8 @@ menu:
       url: /blog/
       weight: 5
 
+
+markup:
+  goldmark:
+    renderer:
+      unsafe: true
