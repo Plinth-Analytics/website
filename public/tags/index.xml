@@ -2,35 +2,35 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tags on Plinth Analytics</title>
-    <link>https://nanx.me/hugo-renga/tags/</link>
+    <link>https://silly-haupia-2459d1.netlify.app/tags/</link>
     <description>Recent content in Tags on Plinth Analytics</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Tue, 01 Dec 2020 21:13:14 -0500</lastBuildDate><atom:link href="https://nanx.me/hugo-renga/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 01 Dec 2020 21:13:14 -0500</lastBuildDate><atom:link href="https://silly-haupia-2459d1.netlify.app/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>plot</title>
-      <link>https://nanx.me/hugo-renga/tags/plot/</link>
+      <link>https://silly-haupia-2459d1.netlify.app/tags/plot/</link>
       <pubDate>Tue, 01 Dec 2020 21:13:14 -0500</pubDate>
       
-      <guid>https://nanx.me/hugo-renga/tags/plot/</guid>
+      <guid>https://silly-haupia-2459d1.netlify.app/tags/plot/</guid>
       <description></description>
     </item>
     
     <item>
       <title>R Markdown</title>
-      <link>https://nanx.me/hugo-renga/tags/r-markdown/</link>
+      <link>https://silly-haupia-2459d1.netlify.app/tags/r-markdown/</link>
       <pubDate>Tue, 01 Dec 2020 21:13:14 -0500</pubDate>
       
-      <guid>https://nanx.me/hugo-renga/tags/r-markdown/</guid>
+      <guid>https://silly-haupia-2459d1.netlify.app/tags/r-markdown/</guid>
       <description></description>
     </item>
     
     <item>
       <title>regression</title>
-      <link>https://nanx.me/hugo-renga/tags/regression/</link>
+      <link>https://silly-haupia-2459d1.netlify.app/tags/regression/</link>
       <pubDate>Tue, 01 Dec 2020 21:13:14 -0500</pubDate>
       
-      <guid>https://nanx.me/hugo-renga/tags/regression/</guid>
+      <guid>https://silly-haupia-2459d1.netlify.app/tags/regression/</guid>
       <description></description>
     </item>
     

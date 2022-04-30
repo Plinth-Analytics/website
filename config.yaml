@@ -18,7 +18,6 @@ params:
   faviconfile: image/logo.png
   github: Plinth-Analytics
   highlightjs: yes
-  linkedin: nathanieldphillips
   logofile: image/plinth_logo_vertical.png
   pagetitle: Plinth Analytics
   posts_navigation: yes
@@ -38,11 +37,6 @@ menu:
       name: Contact
       url: /contact/
       weight: 3
-    - identifier: blog
-      name: Blog
-      url: /blog/
-      weight: 4
-
 
 markup:
   goldmark:
