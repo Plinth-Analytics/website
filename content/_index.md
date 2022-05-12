@@ -6,7 +6,7 @@ title: Plinth Analytics
 ---
 
 
-Plinth's mission is to *Enable life science companies to efficiently obtain meaningful, robust, and repeatable insights from real-world health care data.*
+Plinth's mission is to *Enable efficient, repeatable generation of actionable and robust insights from messy health care data.*
 
 Why?
 

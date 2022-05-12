@@ -16,7 +16,6 @@ params:
   copyrightUrl: https://silly-haupia-2459d1.netlify.app/
   email: info@plinthanalytics.com
   faviconfile: image/logo.png
-  github: Plinth-Analytics
   highlightjs: yes
   logofile: image/plinth_logo_vertical.png
   pagetitle: Plinth Analytics
@@ -33,10 +32,14 @@ menu:
       name: products
       url: /products/
       weight: 2
+    - identifier: about
+      name: about
+      url: /about/
+      weight: 3
     - identifier: contact
       name: Contact
       url: /contact/
-      weight: 3
+      weight: 4
 
 markup:
   goldmark:
