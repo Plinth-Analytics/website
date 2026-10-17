@@ -1,0 +1,31 @@
+---
+// Inlines one of the exported Webflow SVG icons and recolours it with currentColor, so the
+// same icon works on light and dark backgrounds (and needs no inline style for the CSP).
+interface Props {
+  /** File name in src/assets/webflow (the id prefix is enough, e.g. "68d773e74102afa60d9f4554"). */
+  name: string;
+  size?: number;
+  class?: string;
+}
+const svgs = import.meta.glob<string>('/src/assets/webflow/*.svg', { eager: true, query: '?raw', import: 'default' });
+
+const { name, size = 28, class: className } = Astro.props;
+const key = Object.keys(svgs).find((k) => k.split('/').pop()!.startsWith(name));
+if (!key) throw new Error(`Icon not found: ${name}`);
+
+const uid = `i${name.slice(0, 8)}${Math.random().toString(36).slice(2, 7)}`;
+const svg = svgs[key]
+  .replace(/<\?xml[^>]*>/, '')
+  // Size only the root element; inner <rect>s etc. keep their own width/height.
+  .replace(/<svg\b[^>]*>/, (tag) =>
+    tag
+      .replace(/\s(width|height)="[^"]*"/g, '')
+      .replace(/^<svg/, `<svg width="${size}" height="${size}" aria-hidden="true" focusable="false"${className ? ` class="${className}"` : ''}`),
+  )
+  .replace(/(fill|stroke)="(?!none")[^"]*"/g, '$1="currentColor"')
+  .replace(/\bid="([^"]+)"/g, `id="${uid}-$1"`)
+  .replace(/url\(#([^)]+)\)/g, `url(#${uid}-$1)`)
+  .replace(/href="#([^"]+)"/g, `href="#${uid}-$1"`);
+---
+
+<Fragment set:html={svg} />

@@ -1,0 +1,89 @@
+---
+import testimonials from '../data/testimonials.json';
+
+// Same eight quotes, same order as the Webflow homepage slider (CMS order number).
+const items = [...testimonials].sort((a, b) => (a.orderNumber ?? -1) - (b.orderNumber ?? -1));
+---
+
+<ul class="quotes">
+  {
+    items.map((t) => (
+      <li>
+        <figure>
+          <blockquote>
+            <p>{t.testimonialText}</p>
+          </blockquote>
+          <figcaption>
+            <span class="name">{t.name}</span>
+            <span class="role">{t.jobTitle}</span>
+            {t.linkedin && (
+              <a href={t.linkedin} rel="noopener" target="_blank">
+                LinkedIn<span class="sr-only"> profile of {t.name} (opens in a new tab)</span>
+              </a>
+            )}
+          </figcaption>
+        </figure>
+      </li>
+    ))
+  }
+</ul>
+
+<style>
+  .quotes {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    columns: 3 320px;
+    column-gap: 1.5rem;
+  }
+  li {
+    break-inside: avoid;
+    margin-bottom: 1.5rem;
+  }
+  figure {
+    margin: 0;
+    background: var(--white);
+    border: 1px solid var(--line);
+    border-radius: var(--radius-lg);
+    padding: 1.6rem;
+    box-shadow: var(--shadow);
+  }
+  blockquote {
+    margin: 0 0 1.25rem;
+    position: relative;
+    padding-top: 1.6rem;
+  }
+  blockquote::before {
+    content: '“';
+    position: absolute;
+    top: -0.6rem;
+    left: -0.1rem;
+    font-size: 3.5rem;
+    line-height: 1;
+    color: var(--brand);
+    font-weight: 700;
+  }
+  blockquote p {
+    margin: 0;
+    color: var(--ink-2);
+    font-size: 1rem;
+  }
+  figcaption {
+    display: grid;
+    gap: 0.15rem;
+    border-top: 1px solid var(--line);
+    padding-top: 1rem;
+    font-size: 0.93rem;
+  }
+  .name {
+    font-weight: 700;
+    color: var(--ink);
+  }
+  .role {
+    color: var(--muted);
+  }
+  figcaption a {
+    justify-self: start;
+    font-weight: 600;
+  }
+</style>

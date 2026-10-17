@@ -1,0 +1,27 @@
+---
+import Base from '../layouts/Base.astro';
+---
+
+<Base title="Page Not Found" description="The page you are looking for doesn't exist or has been moved." noindex>
+  <section class="section">
+    <div class="wrap wrap--narrow nf">
+      <p class="eyebrow">404</p>
+      <h1>Page Not Found</h1>
+      <p class="lead">The page you are looking for doesn't exist or has been moved.</p>
+      <div class="btn-row">
+        <a class="btn btn--primary" href="/">Go Back to Safety</a>
+        <a class="btn btn--secondary" href="/case-studies">Case Studies</a>
+        <a class="btn btn--secondary" href="/contact">Contact Us</a>
+      </div>
+    </div>
+  </section>
+</Base>
+
+<style>
+  .nf {
+    text-align: center;
+  }
+  .nf .btn-row {
+    justify-content: center;
+  }
+</style>

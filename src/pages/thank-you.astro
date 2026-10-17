@@ -1,0 +1,42 @@
+---
+import Base from '../layouts/Base.astro';
+---
+
+<Base title="Thank you" description="Thank you for contacting Plinth." noindex>
+  <section class="section">
+    <div class="wrap wrap--narrow thanks">
+      <span class="tick" aria-hidden="true">✓</span>
+      <h1>Thank you for contacting Plinth!</h1>
+      <p class="lead">One of our colleagues will reach out to you shortly.</p>
+      <div class="btn-row">
+        <a class="btn btn--primary" href="/">Go back Home</a>
+        <a class="btn btn--secondary" href="/case-studies">Read our case studies</a>
+      </div>
+    </div>
+  </section>
+</Base>
+
+<style>
+  .thanks {
+    text-align: center;
+    padding-block: 2rem;
+  }
+  .thanks .btn-row {
+    justify-content: center;
+  }
+  .tick {
+    display: inline-grid;
+    place-items: center;
+    width: 72px;
+    height: 72px;
+    border-radius: 50%;
+    background: var(--brand-soft);
+    color: var(--brand);
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+  }
+  h1 {
+    font-size: clamp(2rem, 4.5vw, 3rem);
+  }
+</style>

@@ -20,11 +20,11 @@ lastUpdated: "2025-03-27T15:26:29.791Z"
 lastPublished: "2025-05-27T11:59:28.711Z"
 ---
 
-### Effects of immortal time bias on key survival outcomes when retrospectively recruiting patients post index date
+## Effects of immortal time bias on key survival outcomes when retrospectively recruiting patients post index date
 
 Immortal time bias represents one of the most insidious methodological challenges in real-world evidence generation. At Plinth, we've repeatedly observed this issue across multiple patient-centric data vendors who require patients to first enroll in a study before their records can be requested and processed.
 
-#### Motivation
+### Motivation
 
 When patients must survive from diagnosis to enrollment to be included in a dataset, this creates an "immortal period" where, by definition, no deaths can occur. This systematically excludes patients who die before enrollment, artificially inflating survival estimates compared to clinical trials or datasets that don't require enrollment.
 
@@ -39,7 +39,7 @@ The consequences of ignoring immortal time bias can be severe. In our experience
 3.  Misleading comparisons between treatment options
 4.  Potentially harmful clinical decision-making based on biased data
 
-#### Solution
+### Solution
 
 The key to addressing immortal time bias lies in properly defining when patients truly enter the risk set (often called cohort-entry). Rather than using the index date (like diagnosis) as the observation start, analysts must use the date when all patients’ inclusion criteria can be evaluated - typically the latest of:
 
@@ -65,7 +65,7 @@ At Plinth, we've developed robust methodologies to address this issue:
 
 Our experience has shown that when properly implemented, these corrections can significantly change outcome interpretations, sometimes revealing survival differences that were previously masked by methodological bias.
 
-#### Impact
+### Impact
 
 By focusing on proper cohort entry time calculation, Plinth's analytical frameworks ensure that real-world evidence accurately reflects patient outcomes, providing more reliable insights for clinical and regulatory decision-making.
 

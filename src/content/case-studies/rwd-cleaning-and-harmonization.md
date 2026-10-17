@@ -20,13 +20,13 @@ lastUpdated: "2025-06-26T20:22:24.497Z"
 lastPublished: "2025-06-26T20:22:24.497Z"
 ---
 
-**Full Poster** [**Here**](../../assets/webflow/654a714390b91efbe3224ff1_pub00476_pos_ectrims_2023_picnichealth_final-1.pdf)
+**Full Poster** [**Here**](/files/654a714390b91efbe3224ff1_pub00476_pos_ectrims_2023_picnichealth_final-1.pdf)
 
-##### Motivation
+## Motivation
 
 We receive thousands of files a year that need to be cleaned and harmonized into a standardized format. Today, we have to write a custom code script for each file. If we keep going on this way, we’ll 🔥 out our team and our budget.
 
-##### Key Results
+## Key Results
 
 🖼No-code dashboard replaces the need for thousands of lines of custom code
 
@@ -34,7 +34,7 @@ We receive thousands of files a year that need to be cleaned and harmonized into
 
 📈System is ready for future growth and scale
 
-##### Challenge
+## Challenge
 
 In order for new customers to be onboarded to a client, their census data must be ingested into the client’s database.
 
@@ -44,7 +44,7 @@ The client’s data science team was on track to spend 1 FTE / year writing hund
 
 Preparing for January 2023 with the current process would have taken 100% of the data foundation team capacity, blocking any new investments.
 
-##### Deliverables
+## Deliverables
 
 No-code configuration and testing dashboard. Empowers implementation team to define company-specific business logic and test outputs in a UI
 
@@ -52,7 +52,7 @@ Smart cleaning package. Extensible package automates file cleaning tasks, removi
 
 Daily CRON job to process latest census files. Deployed, scheduled ETL runs without the need for manual running or babysitting
 
-##### Business Impact
+## Business Impact
 
 All files for January 2023 launches leveraged the new process. 100% passed the new quality control checks.
 

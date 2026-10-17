@@ -1,0 +1,33 @@
+# Cloudflare Pages redirects: old Webflow URLs → new Astro URLs (first match wins).
+# scripts/check-redirects.mjs verifies every URL in src/data/webflow-urls.json resolves.
+
+# Case studies (Webflow "Stories" collection)
+/casestudies              /case-studies               301
+/stories                  /case-studies               301
+/stories/*                /case-studies/:splat        301
+
+# Webflow CMS template pages that were never real pages
+/technologies             /#technologies              301
+/technologies/*           /#technologies              301
+/testimonials             /#testimonials              301
+/testimonials/*           /#testimonials              301
+/team-members             /about#team                 301
+/team-members/*           /about#team                 301
+/open-jobs                /careers                    301
+/open-jobs/*              /careers                    301
+
+# Webflow template leftovers and the password page
+/project-4                /                           301
+/styleguide               /                           301
+/401                      /                           301
+
+# The privacy policy used to live on the About page
+/privacy-policy           /privacy                    301
+
+# Paths from the pre-Webflow Hugo site (master branch)
+/blog                     /case-studies               301
+/blog/*                   /case-studies               301
+/principles               /about                      301
+/products                 /solutions                  301
+/categories/*             /case-studies               301
+/tags/*                   /case-studies               301

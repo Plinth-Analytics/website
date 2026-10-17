@@ -25,3 +25,7 @@ Thumbs.db
 screenshots/
 test-results/
 playwright-report/
+
+# Clash Display (Indian Type Foundry, all rights reserved) is downloaded by the export
+# but must not be redistributed from this public repo. The site uses Figtree (OFL).
+src/assets/webflow/*clashdisplay*

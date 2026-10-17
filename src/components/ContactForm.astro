@@ -1,0 +1,178 @@
+---
+import { FORMSPREE_ID, CONTACT_EMAIL, SITE_URL } from '../lib/site';
+
+interface Props {
+  id?: string;
+}
+const { id = 'contact-form' } = Astro.props;
+const action = FORMSPREE_ID ? `https://formspree.io/f/${encodeURIComponent(FORMSPREE_ID)}` : undefined;
+if (!FORMSPREE_ID) {
+  console.warn('[contact] PUBLIC_FORMSPREE_ID is not set — the contact form will show an email fallback.');
+}
+---
+
+{
+  action ? (
+    <form class="contact-form" id={id} action={action} method="POST" data-contact-form novalidate>
+      {/* No-JS fallback: Formspree redirects here after a normal POST. */}
+      <input type="hidden" name="_next" value={`${SITE_URL}/thank-you`} />
+      <input type="hidden" name="_subject" value="New enquiry from plinth.co" />
+      {/* Honeypot: hidden from people and assistive tech; bots that fill it are discarded. */}
+      <div class="hp" aria-hidden="true">
+        <label for={`${id}-gotcha`}>Leave this field empty</label>
+        <input type="text" id={`${id}-gotcha`} name="_gotcha" tabindex="-1" autocomplete="off" />
+      </div>
+
+      <div class="field">
+        <label for={`${id}-name`}>
+          Name <span aria-hidden="true">*</span>
+        </label>
+        <input id={`${id}-name`} name="name" type="text" autocomplete="name" required maxlength="200" />
+      </div>
+      <div class="field">
+        <label for={`${id}-email`}>
+          Email <span aria-hidden="true">*</span>
+        </label>
+        <input id={`${id}-email`} name="email" type="email" autocomplete="email" required maxlength="200" />
+      </div>
+      <div class="field">
+        <label for={`${id}-message`}>
+          Message <span aria-hidden="true">*</span>
+        </label>
+        <textarea id={`${id}-message`} name="message" rows="5" required maxlength="5000" />
+      </div>
+      <p class="hint">
+        Fields marked <span aria-hidden="true">*</span>
+        <span class="sr-only">with an asterisk</span> are required. See our <a href="/privacy">privacy policy</a>.
+      </p>
+      <p class="status" role="status" aria-live="polite" data-status hidden />
+      <button class="btn btn--primary" type="submit">
+        Send message
+      </button>
+    </form>
+  ) : (
+    <div class="contact-form contact-form--fallback">
+      <p>
+        Email us at <a href={`mailto:${CONTACT_EMAIL}?subject=Contact%20Website`}>{CONTACT_EMAIL}</a> and one of our
+        colleagues will reach out to you shortly.
+      </p>
+    </div>
+  )
+}
+
+<div class="thanks" data-thanks hidden tabindex="-1">
+  <h3>Thank you for contacting Plinth!</h3>
+  <p>One of our colleagues will reach out to you shortly.</p>
+</div>
+
+<script>
+  document.querySelectorAll<HTMLFormElement>('[data-contact-form]').forEach((form) => {
+    const status = form.querySelector<HTMLElement>('[data-status]')!;
+    const thanks = form.parentElement?.querySelector<HTMLElement>('[data-thanks]');
+    const button = form.querySelector<HTMLButtonElement>('button[type=submit]')!;
+    const say = (msg: string, error = false) => {
+      status.hidden = false;
+      status.textContent = msg;
+      status.classList.toggle('is-error', error);
+    };
+
+    form.addEventListener('submit', async (event) => {
+      event.preventDefault();
+      if (!form.checkValidity()) {
+        form.reportValidity();
+        const firstInvalid = form.querySelector<HTMLElement>(':invalid');
+        firstInvalid?.focus();
+        say('Please fill in your name, a valid email address and a message.', true);
+        return;
+      }
+      button.disabled = true;
+      say('Sending…');
+      try {
+        const res = await fetch(form.action, {
+          method: 'POST',
+          body: new FormData(form),
+          headers: { Accept: 'application/json' },
+        });
+        if (!res.ok) throw new Error(String(res.status));
+        form.hidden = true;
+        if (thanks) {
+          thanks.hidden = false;
+          thanks.focus();
+        }
+      } catch {
+        say('Sorry, something went wrong while sending your message. Please try again or email info@plinth.co.', true);
+        button.disabled = false;
+      }
+    });
+  });
+</script>
+
+<style>
+  .contact-form {
+    display: grid;
+    gap: 1.1rem;
+  }
+  .field {
+    display: grid;
+    gap: 0.4rem;
+  }
+  label {
+    font-weight: 600;
+    color: var(--ink);
+  }
+  input,
+  textarea {
+    font: inherit;
+    color: var(--ink);
+    background: var(--white);
+    border: 1.5px solid #8b97ad; /* 3.1:1 against white for the field boundary */
+    border-radius: 10px;
+    padding: 0.75rem 0.9rem;
+    min-height: 48px;
+    width: 100%;
+  }
+  textarea {
+    resize: vertical;
+    min-height: 140px;
+  }
+  input:focus-visible,
+  textarea:focus-visible {
+    outline: 3px solid var(--focus);
+    outline-offset: 1px;
+    border-color: var(--brand);
+  }
+  .hp {
+    position: absolute;
+    left: -10000px;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+  }
+  .hint {
+    font-size: 0.92rem;
+    color: var(--muted);
+    margin: 0;
+  }
+  .status {
+    margin: 0;
+    font-weight: 600;
+    color: var(--ink);
+  }
+  .status.is-error {
+    color: #b42318; /* 6.0:1 on white */
+  }
+  button {
+    justify-self: start;
+  }
+  .thanks {
+    padding: 1.5rem;
+    border-radius: var(--radius);
+    background: var(--brand-soft);
+  }
+  .thanks h3 {
+    margin-bottom: 0.3rem;
+  }
+  .thanks p {
+    margin: 0;
+  }
+</style>

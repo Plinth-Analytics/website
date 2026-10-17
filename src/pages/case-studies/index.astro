@@ -1,0 +1,114 @@
+---
+import Base from '../../layouts/Base.astro';
+import PageHero from '../../components/PageHero.astro';
+import CaseStudyCard from '../../components/CaseStudyCard.astro';
+import CtaBand from '../../components/CtaBand.astro';
+import { getCaseStudies } from '../../lib/case-studies';
+
+const entries = await getCaseStudies();
+const categories = [...new Set(entries.map((e) => e.data.category).filter(Boolean))] as string[];
+---
+
+<Base
+  title="Case Studies"
+  description="Explore examples of how we've helped businesses like yours achieve their goals and surpass expectations."
+>
+  <PageHero
+    eyebrow="Case Studies"
+    title="Our Stories"
+    lead="Explore examples of how we've helped businesses like yours achieve their goals and surpass expectations."
+  />
+
+  <section class="section" aria-label="All case studies">
+    <div class="wrap">
+      <div class="filters" data-filters hidden>
+        <span id="filter-label" class="meta">Show:</span>
+        <div role="group" aria-labelledby="filter-label">
+          <button type="button" aria-pressed="true" data-filter="all">All ({entries.length})</button>
+          {
+            categories.map((c) => (
+              <button type="button" aria-pressed="false" data-filter={c}>
+                {c} ({entries.filter((e) => e.data.category === c).length})
+              </button>
+            ))
+          }
+        </div>
+      </div>
+      <p class="sr-only" role="status" aria-live="polite" data-filter-status></p>
+      <ul class="grid grid--3 cards">
+        {
+          entries.map((entry, i) => (
+            <li data-category={entry.data.category}>
+              <CaseStudyCard entry={entry} headingLevel="h2" eager={i < 3} />
+            </li>
+          ))
+        }
+      </ul>
+    </div>
+  </section>
+
+  <CtaBand />
+</Base>
+
+<script>
+  // Progressive enhancement: without JS every case study is listed.
+  const bar = document.querySelector<HTMLElement>('[data-filters]');
+  const status = document.querySelector<HTMLElement>('[data-filter-status]');
+  const items = [...document.querySelectorAll<HTMLElement>('.cards > li')];
+  if (bar) {
+    bar.hidden = false;
+    bar.addEventListener('click', (e) => {
+      const btn = (e.target as HTMLElement).closest<HTMLButtonElement>('[data-filter]');
+      if (!btn) return;
+      const f = btn.dataset.filter;
+      bar.querySelectorAll('[data-filter]').forEach((b) => b.setAttribute('aria-pressed', String(b === btn)));
+      let shown = 0;
+      items.forEach((li) => {
+        const show = f === 'all' || li.dataset.category === f;
+        li.hidden = !show;
+        if (show) shown++;
+      });
+      if (status) status.textContent = `Showing ${shown} ${shown === 1 ? 'item' : 'items'}`;
+    });
+  }
+</script>
+
+<style>
+  .cards {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  .cards > li {
+    display: grid;
+  }
+  .filters {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 2rem;
+  }
+  .filters [role='group'] {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+  .filters button {
+    font: inherit;
+    font-weight: 600;
+    font-size: 0.95rem;
+    min-height: 44px;
+    padding: 0.45rem 1rem;
+    border-radius: 999px;
+    border: 1px solid var(--line);
+    background: var(--white);
+    color: var(--ink);
+    cursor: pointer;
+  }
+  .filters button[aria-pressed='true'] {
+    background: var(--ink);
+    border-color: var(--ink);
+    color: var(--white);
+  }
+</style>

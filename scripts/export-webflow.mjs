@@ -24,7 +24,7 @@
 //   $PRIVATE_EXPORT_DIR/form-submissions-<date>.csv
 //   $PRIVATE_EXPORT_DIR/raw/*.json
 
-import { mkdir, writeFile, stat, readdir, unlink } from 'node:fs/promises';
+import { mkdir, writeFile, stat, readdir, unlink, copyFile } from 'node:fs/promises';
 import { existsSync } from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
@@ -201,7 +201,17 @@ function richTextToMarkdown(html) {
     .replace(/‍/g, '') // Webflow's zero-width-joiner spacer paragraphs
     .replace(/\s+id=""/g, '')
     .replace(/<p>\s*<\/p>/g, '');
-  return rewriteUrls(turndown.turndown(cleaned)).replace(/\n{3,}/g, '\n\n').trim() + '\n';
+  const md = rewriteUrls(turndown.turndown(cleaned)).replace(/\n{3,}/g, '\n\n').trim() + '\n';
+  return shiftHeadings(md);
+}
+
+// Webflow rich text starts at h3–h5, but the page template supplies the h1. Shift headings up
+// so the highest is an h2 and the document outline has no gaps.
+function shiftHeadings(md) {
+  const levels = [...md.matchAll(/^(#{1,6})\s/gm)].map((m) => m[1].length);
+  const shift = levels.length ? Math.min(...levels) - 2 : 0;
+  if (shift <= 0) return md;
+  return md.replace(/^(#{1,6})(?=\s)/gm, (h) => '#'.repeat(Math.max(2, h.length - shift)));
 }
 
 // ------------------------------------------------------------- content fixes
@@ -342,6 +352,7 @@ async function main() {
   }
 
   // 3. Case studies -> Markdown with frontmatter.
+  const linkedFiles = new Set();
   await mkdir(CASE_STUDY_DIR, { recursive: true });
   for (const f of await readdir(CASE_STUDY_DIR)) if (f.endsWith('.md')) await unlink(path.join(CASE_STUDY_DIR, f));
   const richFields = caseCollection.fields.filter((f) => f.type === 'RichText').map((f) => camel(f.slug));
@@ -352,7 +363,13 @@ async function main() {
     const fm = { ...fields, title: fields.name, status: status(item), ...meta(item) };
     delete fm.name;
     if (fm.blogImage?.src) fm.blogImage.src = toCaseStudyRelative(fm.blogImage.src);
-    const file = `---${toYaml(fm)}\n---\n\n${toCaseStudyRelative(body)}`;
+    // Astro only processes Markdown *images*; linked documents (PDF posters) are served as-is
+    // from public/files/ and copied there after download.
+    const linkedBody = body.replace(/\]\((\/src\/assets\/webflow\/[^)\s]+\.pdf)\)/g, (_, p) => {
+      linkedFiles.add(p);
+      return `](/files/${p.split('/').pop()})`;
+    });
+    const file = `---${toYaml(fm)}\n---\n\n${toCaseStudyRelative(linkedBody)}`;
     await writeFile(path.join(CASE_STUDY_DIR, `${item.fieldData.slug}.md`), applyFixes(`case-studies/${item.fieldData.slug}`, file));
   }
 
@@ -374,8 +391,20 @@ async function main() {
     supportingCounts[outName] = { total: c.items.length, exported: rows.length };
   }
 
+  // Every URL the Webflow site served (static pages, incl. drafts that were linked, and each CMS
+  // item under its collection template), so scripts/check-redirects.mjs can prove none 404.
+  const urls = new Set(pages.filter((p) => !p.collectionId && p.publishedPath).map((p) => p.publishedPath));
+  for (const p of pages.filter((p) => p.collectionId && p.publishedPath)) {
+    const c = Object.values(collections).find((c) => c.id === p.collectionId);
+    urls.add(p.publishedPath);
+    for (const i of c?.items ?? []) if (!i.isDraft && !i.isArchived) urls.add(`${p.publishedPath}/${i.fieldData.slug}`);
+  }
+  await writeFile(path.join(DATA_DIR, 'webflow-urls.json'), JSON.stringify([...urls].sort(), null, 2) + '\n');
+
   // 5. Download.
   const dl = await downloadAll();
+  await mkdir(path.join(ROOT, 'public/files'), { recursive: true });
+  for (const p of linkedFiles) await copyFile(path.join(ROOT, p), path.join(ROOT, 'public/files', p.split('/').pop()));
   const manifest = Object.fromEntries([...assetMap.entries()].sort());
   await writeFile(path.join(DATA_DIR, 'webflow-assets.json'), JSON.stringify(manifest, null, 2) + '\n');
 
