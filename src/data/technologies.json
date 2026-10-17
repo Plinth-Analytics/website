@@ -1,0 +1,740 @@
+[
+  {
+    "description": null,
+    "technologyLogo": null,
+    "category": "Domains Supported",
+    "name": "Epidemiology",
+    "slug": "epidemiology",
+    "status": {
+      "isDraft": false,
+      "isArchived": false,
+      "published": true,
+      "visibleOnLiveSite": true
+    },
+    "webflowId": "667d9c347421b6aafbc2cb28",
+    "createdOn": "2024-06-27T17:07:00.785Z",
+    "lastUpdated": "2024-07-08T14:37:58.148Z",
+    "lastPublished": "2024-07-08T14:38:08.249Z"
+  },
+  {
+    "description": null,
+    "technologyLogo": null,
+    "category": "Domains Supported",
+    "name": "HEOR",
+    "slug": "heor",
+    "status": {
+      "isDraft": false,
+      "isArchived": false,
+      "published": true,
+      "visibleOnLiveSite": true
+    },
+    "webflowId": "667d9c29702f74a7e032ba5c",
+    "createdOn": "2024-06-27T17:06:49.941Z",
+    "lastUpdated": "2024-06-27T17:06:49.941Z",
+    "lastPublished": "2024-06-27T17:11:55.769Z"
+  },
+  {
+    "description": null,
+    "technologyLogo": null,
+    "category": "Domains Supported",
+    "name": "Genetics",
+    "slug": "genetics",
+    "status": {
+      "isDraft": false,
+      "isArchived": false,
+      "published": true,
+      "visibleOnLiveSite": true
+    },
+    "webflowId": "667d9c2006a1211543c58f76",
+    "createdOn": "2024-06-27T17:06:40.631Z",
+    "lastUpdated": "2024-07-08T14:38:03.191Z",
+    "lastPublished": "2024-07-08T14:38:08.249Z"
+  },
+  {
+    "description": null,
+    "technologyLogo": null,
+    "category": "Data Model Expertise",
+    "name": "Custom Case Report Forms",
+    "slug": "custom-case-report-forms",
+    "status": {
+      "isDraft": false,
+      "isArchived": false,
+      "published": true,
+      "visibleOnLiveSite": true
+    },
+    "webflowId": "667d9c13d6b0aa148ce6ac03",
+    "createdOn": "2024-06-27T17:06:27.833Z",
+    "lastUpdated": "2024-06-27T17:06:27.833Z",
+    "lastPublished": "2024-06-27T17:11:55.769Z"
+  },
+  {
+    "description": null,
+    "technologyLogo": null,
+    "category": "Data Model Expertise",
+    "name": "Datavant Linked Data",
+    "slug": "datavant-linked-data",
+    "status": {
+      "isDraft": false,
+      "isArchived": false,
+      "published": true,
+      "visibleOnLiveSite": true
+    },
+    "webflowId": "667d9c08d2203b78da99bb4f",
+    "createdOn": "2024-06-27T17:06:16.160Z",
+    "lastUpdated": "2024-06-27T17:06:16.160Z",
+    "lastPublished": "2024-06-27T17:11:55.769Z"
+  },
+  {
+    "description": null,
+    "technologyLogo": null,
+    "category": "Data Model Expertise",
+    "name": "HealthVerity",
+    "slug": "healthverity",
+    "status": {
+      "isDraft": false,
+      "isArchived": false,
+      "published": true,
+      "visibleOnLiveSite": true
+    },
+    "webflowId": "667d9bf8328ab1e985123cf6",
+    "createdOn": "2024-06-27T17:06:00.573Z",
+    "lastUpdated": "2024-06-27T17:06:00.573Z",
+    "lastPublished": "2024-06-27T17:11:55.769Z"
+  },
+  {
+    "description": null,
+    "technologyLogo": null,
+    "category": "Data Model Expertise",
+    "name": "Outcomes4Me",
+    "slug": "outcomes4me",
+    "status": {
+      "isDraft": false,
+      "isArchived": false,
+      "published": true,
+      "visibleOnLiveSite": true
+    },
+    "webflowId": "667d9bee9dd3484f6521cb07",
+    "createdOn": "2024-06-27T17:05:50.006Z",
+    "lastUpdated": "2024-06-27T17:05:50.006Z",
+    "lastPublished": "2024-06-27T17:11:55.769Z"
+  },
+  {
+    "description": null,
+    "technologyLogo": null,
+    "category": "Data Model Expertise",
+    "name": "PicnicHealth",
+    "slug": "picnichealth",
+    "status": {
+      "isDraft": false,
+      "isArchived": false,
+      "published": true,
+      "visibleOnLiveSite": true
+    },
+    "webflowId": "667d9be42aed69887244a590",
+    "createdOn": "2024-06-27T17:05:40.840Z",
+    "lastUpdated": "2024-06-27T17:05:40.840Z",
+    "lastPublished": "2024-06-27T17:11:55.769Z"
+  },
+  {
+    "description": null,
+    "technologyLogo": null,
+    "category": "Data Model Expertise",
+    "name": "Optum",
+    "slug": "optum",
+    "status": {
+      "isDraft": false,
+      "isArchived": false,
+      "published": true,
+      "visibleOnLiveSite": true
+    },
+    "webflowId": "667d9bdac7a20ccfaf7f2d1b",
+    "createdOn": "2024-06-27T17:05:30.673Z",
+    "lastUpdated": "2024-06-27T17:05:30.673Z",
+    "lastPublished": "2024-06-27T17:11:55.769Z"
+  },
+  {
+    "description": null,
+    "technologyLogo": null,
+    "category": "Data Model Expertise",
+    "name": "Marketscan",
+    "slug": "marketscan",
+    "status": {
+      "isDraft": false,
+      "isArchived": false,
+      "published": true,
+      "visibleOnLiveSite": true
+    },
+    "webflowId": "667d9bce49326bc72881263d",
+    "createdOn": "2024-06-27T17:05:18.215Z",
+    "lastUpdated": "2024-06-27T17:05:18.215Z",
+    "lastPublished": "2024-06-27T17:11:55.769Z"
+  },
+  {
+    "description": null,
+    "technologyLogo": null,
+    "category": "Data Model Expertise",
+    "name": "Komodo",
+    "slug": "komodo",
+    "status": {
+      "isDraft": false,
+      "isArchived": false,
+      "published": true,
+      "visibleOnLiveSite": true
+    },
+    "webflowId": "667d9bc4a9e1723ce710bb91",
+    "createdOn": "2024-06-27T17:05:08.632Z",
+    "lastUpdated": "2024-06-27T17:05:08.632Z",
+    "lastPublished": "2024-06-27T17:11:55.769Z"
+  },
+  {
+    "description": null,
+    "technologyLogo": null,
+    "category": "Data Model Expertise",
+    "name": "Flatiron (EDM, Spotlight, CGDB)",
+    "slug": "flatiron-edm-spotlight-cgdb",
+    "status": {
+      "isDraft": false,
+      "isArchived": false,
+      "published": true,
+      "visibleOnLiveSite": true
+    },
+    "webflowId": "667d9bb91f9eb454b8ed2ae6",
+    "createdOn": "2024-06-27T17:04:57.009Z",
+    "lastUpdated": "2024-06-27T17:04:57.009Z",
+    "lastPublished": "2024-06-27T17:11:55.769Z"
+  },
+  {
+    "description": null,
+    "technologyLogo": null,
+    "category": "Data Model Expertise",
+    "name": "Tempus",
+    "slug": "tempus",
+    "status": {
+      "isDraft": false,
+      "isArchived": false,
+      "published": true,
+      "visibleOnLiveSite": true
+    },
+    "webflowId": "667d9baf5d0865b43b65b1e2",
+    "createdOn": "2024-06-27T17:04:47.298Z",
+    "lastUpdated": "2024-06-27T17:04:47.298Z",
+    "lastPublished": "2024-06-27T17:11:55.769Z"
+  },
+  {
+    "description": null,
+    "technologyLogo": null,
+    "category": "Data Model Expertise",
+    "name": "OMOP",
+    "slug": "omop",
+    "status": {
+      "isDraft": false,
+      "isArchived": false,
+      "published": true,
+      "visibleOnLiveSite": true
+    },
+    "webflowId": "667d9ba4d6b0aa148ce659c2",
+    "createdOn": "2024-06-27T17:04:36.735Z",
+    "lastUpdated": "2024-06-27T17:04:36.735Z",
+    "lastPublished": "2024-06-27T17:11:55.769Z"
+  },
+  {
+    "description": null,
+    "technologyLogo": null,
+    "category": "Deployment",
+    "name": "shinyapps.io",
+    "slug": "shinyapps",
+    "status": {
+      "isDraft": false,
+      "isArchived": false,
+      "published": true,
+      "visibleOnLiveSite": true
+    },
+    "webflowId": "667d94a97421b6aafbbcb5ab",
+    "createdOn": "2024-06-27T16:34:49.878Z",
+    "lastUpdated": "2024-06-27T16:34:59.959Z",
+    "lastPublished": "2024-06-27T16:47:27.377Z"
+  },
+  {
+    "description": null,
+    "technologyLogo": {
+      "src": "/src/assets/webflow/667af6bcda8398acc40b407e_untitled-21.png",
+      "alt": null,
+      "webflowFileId": "667af6bcda8398acc40b407e"
+    },
+    "category": "Databases",
+    "name": "dbplyr",
+    "slug": "dbplyr",
+    "status": {
+      "isDraft": false,
+      "isArchived": false,
+      "published": true,
+      "visibleOnLiveSite": true
+    },
+    "webflowId": "667af6befb50268be49cec0c",
+    "createdOn": "2024-06-25T16:56:30.730Z",
+    "lastUpdated": "2024-06-25T16:56:30.730Z",
+    "lastPublished": "2024-06-25T16:59:14.918Z"
+  },
+  {
+    "description": null,
+    "technologyLogo": {
+      "src": "/src/assets/webflow/667af6aef4fdf9ed63c8cc86_untitled-20.png",
+      "alt": null,
+      "webflowFileId": "667af6aef4fdf9ed63c8cc86"
+    },
+    "category": "Databases",
+    "name": "Oracle",
+    "slug": "oracle",
+    "status": {
+      "isDraft": false,
+      "isArchived": false,
+      "published": true,
+      "visibleOnLiveSite": true
+    },
+    "webflowId": "667af6b15ef5a74c7d56ab76",
+    "createdOn": "2024-06-25T16:56:17.002Z",
+    "lastUpdated": "2024-06-25T16:56:17.002Z",
+    "lastPublished": "2024-06-25T16:59:14.918Z"
+  },
+  {
+    "description": null,
+    "technologyLogo": {
+      "src": "/src/assets/webflow/667af685aae27f525803147c_untitled-19.png",
+      "alt": null,
+      "webflowFileId": "667af685aae27f525803147c"
+    },
+    "category": "Databases",
+    "name": "SQL Server",
+    "slug": "sql-server",
+    "status": {
+      "isDraft": false,
+      "isArchived": false,
+      "published": true,
+      "visibleOnLiveSite": true
+    },
+    "webflowId": "667af689f4fdf9ed63c8b573",
+    "createdOn": "2024-06-25T16:55:37.814Z",
+    "lastUpdated": "2024-06-25T16:55:37.814Z",
+    "lastPublished": "2024-06-25T16:59:14.918Z"
+  },
+  {
+    "description": null,
+    "technologyLogo": {
+      "src": "/src/assets/webflow/667af66f21e608d8ad28b386_untitled-18.png",
+      "alt": null,
+      "webflowFileId": "667af66f21e608d8ad28b386"
+    },
+    "category": "Databases",
+    "name": "PostgreSQL",
+    "slug": "postgresql",
+    "status": {
+      "isDraft": false,
+      "isArchived": false,
+      "published": true,
+      "visibleOnLiveSite": true
+    },
+    "webflowId": "667af6734a5b5d49201c0ec6",
+    "createdOn": "2024-06-25T16:55:15.522Z",
+    "lastUpdated": "2024-06-25T16:55:15.522Z",
+    "lastPublished": "2024-06-25T16:59:14.918Z"
+  },
+  {
+    "description": null,
+    "technologyLogo": {
+      "src": "/src/assets/webflow/667af6555f38aab2fbd2060b_untitled-16.png",
+      "alt": null,
+      "webflowFileId": "667af6555f38aab2fbd2060b"
+    },
+    "category": "Databases",
+    "name": "Redshift",
+    "slug": "redshift",
+    "status": {
+      "isDraft": false,
+      "isArchived": false,
+      "published": true,
+      "visibleOnLiveSite": true
+    },
+    "webflowId": "667af65905d4a429e31f7243",
+    "createdOn": "2024-06-25T16:54:49.220Z",
+    "lastUpdated": "2024-06-25T16:54:49.220Z",
+    "lastPublished": "2024-06-25T16:59:14.918Z"
+  },
+  {
+    "description": null,
+    "technologyLogo": {
+      "src": "/src/assets/webflow/667af640c5fec59b94d27572_untitled-14.png",
+      "alt": null,
+      "webflowFileId": "667af640c5fec59b94d27572"
+    },
+    "category": "Reproducible Science",
+    "name": "Targets",
+    "slug": "targets",
+    "status": {
+      "isDraft": false,
+      "isArchived": false,
+      "published": true,
+      "visibleOnLiveSite": true
+    },
+    "webflowId": "667af648f4927e2f2dbb72f1",
+    "createdOn": "2024-06-25T16:54:32.275Z",
+    "lastUpdated": "2024-06-25T16:54:32.275Z",
+    "lastPublished": "2024-06-25T16:59:14.918Z"
+  },
+  {
+    "description": null,
+    "technologyLogo": {
+      "src": "/src/assets/webflow/667af60572fc6e86638394c5_untitled-13.png",
+      "alt": null,
+      "webflowFileId": "667af60572fc6e86638394c5"
+    },
+    "category": "Reproducible Science",
+    "name": "Renv",
+    "slug": "renv",
+    "status": {
+      "isDraft": false,
+      "isArchived": false,
+      "published": true,
+      "visibleOnLiveSite": true
+    },
+    "webflowId": "667af60c5f38aab2fbd17917",
+    "createdOn": "2024-06-25T16:53:32.293Z",
+    "lastUpdated": "2024-06-25T16:53:32.293Z",
+    "lastPublished": "2024-06-25T16:59:14.918Z"
+  },
+  {
+    "description": null,
+    "technologyLogo": {
+      "src": "/src/assets/webflow/667af5cf84024d240feb63ec_untitled-12.png",
+      "alt": null,
+      "webflowFileId": "667af5cf84024d240feb63ec"
+    },
+    "category": "Dashboards and Applications",
+    "name": "Rhino",
+    "slug": "rhino",
+    "status": {
+      "isDraft": false,
+      "isArchived": false,
+      "published": true,
+      "visibleOnLiveSite": true
+    },
+    "webflowId": "667af5d4e9e62e6be2654071",
+    "createdOn": "2024-06-25T16:52:36.945Z",
+    "lastUpdated": "2024-06-25T16:52:36.945Z",
+    "lastPublished": "2024-06-25T16:59:14.918Z"
+  },
+  {
+    "description": null,
+    "technologyLogo": {
+      "src": "/src/assets/webflow/667af5b89bb7f49977c0c603_untitled-10.png",
+      "alt": null,
+      "webflowFileId": "667af5b89bb7f49977c0c603"
+    },
+    "category": "Deployment",
+    "name": "Netlify",
+    "slug": "netlify",
+    "status": {
+      "isDraft": false,
+      "isArchived": false,
+      "published": true,
+      "visibleOnLiveSite": true
+    },
+    "webflowId": "667af5bc1df9fa7818008730",
+    "createdOn": "2024-06-25T16:52:12.986Z",
+    "lastUpdated": "2024-06-25T16:52:12.986Z",
+    "lastPublished": "2024-06-25T16:59:14.918Z"
+  },
+  {
+    "description": null,
+    "technologyLogo": {
+      "src": "/src/assets/webflow/667af59d233cc7d46951df77_untitled-7.png",
+      "alt": null,
+      "webflowFileId": "667af59d233cc7d46951df77"
+    },
+    "category": "Reporting",
+    "name": "RMarkdown",
+    "slug": "rmarkdown",
+    "status": {
+      "isDraft": false,
+      "isArchived": false,
+      "published": true,
+      "visibleOnLiveSite": true
+    },
+    "webflowId": "667af5a17f9f08ecbdcf023c",
+    "createdOn": "2024-06-25T16:51:45.937Z",
+    "lastUpdated": "2024-06-25T16:51:45.937Z",
+    "lastPublished": "2024-06-25T16:59:14.918Z"
+  },
+  {
+    "description": null,
+    "technologyLogo": {
+      "src": "/src/assets/webflow/667af571696e3f599e8a1c21_untitled-6.png",
+      "alt": null,
+      "webflowFileId": "667af571696e3f599e8a1c21"
+    },
+    "category": "Reporting",
+    "name": "Quarto",
+    "slug": "quarto",
+    "status": {
+      "isDraft": false,
+      "isArchived": false,
+      "published": true,
+      "visibleOnLiveSite": true
+    },
+    "webflowId": "667af576c56d96cd43118e25",
+    "createdOn": "2024-06-25T16:51:02.834Z",
+    "lastUpdated": "2024-06-25T16:51:02.834Z",
+    "lastPublished": "2024-06-25T16:59:14.918Z"
+  },
+  {
+    "description": null,
+    "technologyLogo": {
+      "src": "/src/assets/webflow/667af54c473487db18ea7d30_untitled-4.png",
+      "alt": null,
+      "webflowFileId": "667af54c473487db18ea7d30"
+    },
+    "category": "Software Development",
+    "name": "Devtools",
+    "slug": "devtools",
+    "status": {
+      "isDraft": false,
+      "isArchived": false,
+      "published": true,
+      "visibleOnLiveSite": true
+    },
+    "webflowId": "667af550ca801e0943151bf6",
+    "createdOn": "2024-06-25T16:50:24.975Z",
+    "lastUpdated": "2024-06-25T16:50:24.975Z",
+    "lastPublished": "2024-06-25T16:59:14.918Z"
+  },
+  {
+    "description": null,
+    "technologyLogo": {
+      "src": "/src/assets/webflow/667af534ca801e09431504da_untitled-3.png",
+      "alt": null,
+      "webflowFileId": "667af534ca801e09431504da"
+    },
+    "category": "Software Development",
+    "name": "Testthat",
+    "slug": "testthat",
+    "status": {
+      "isDraft": false,
+      "isArchived": false,
+      "published": true,
+      "visibleOnLiveSite": true
+    },
+    "webflowId": "667af53d2272d9fd7fe885d4",
+    "createdOn": "2024-06-25T16:50:05.067Z",
+    "lastUpdated": "2024-06-25T16:50:05.067Z",
+    "lastPublished": "2024-06-25T16:59:14.918Z"
+  },
+  {
+    "description": null,
+    "technologyLogo": {
+      "src": "/src/assets/webflow/667af516e0287629457bb307_untitled.png",
+      "alt": null,
+      "webflowFileId": "667af516e0287629457bb307"
+    },
+    "category": "Software Development",
+    "name": "R",
+    "slug": "r",
+    "status": {
+      "isDraft": false,
+      "isArchived": false,
+      "published": true,
+      "visibleOnLiveSite": true
+    },
+    "webflowId": "667af518696e3f599e89d137",
+    "createdOn": "2024-06-25T16:49:28.155Z",
+    "lastUpdated": "2024-06-25T16:49:33.850Z",
+    "lastPublished": "2024-06-25T16:59:14.918Z"
+  },
+  {
+    "description": "BigQuery is a completely serverless and cost-effective enterprise data warehouse. It has built-in machine learning and BI that works across clouds, and scales with your data.",
+    "technologyLogo": {
+      "src": "/src/assets/webflow/66795a03005ca1787e23f697_untitled-17.png",
+      "alt": null,
+      "webflowFileId": "66795a03005ca1787e23f697"
+    },
+    "category": "Databases",
+    "name": "Big Query",
+    "slug": "big-query",
+    "status": {
+      "isDraft": false,
+      "isArchived": false,
+      "published": true,
+      "visibleOnLiveSite": true
+    },
+    "webflowId": "6679571b13529ad5b8ea12ab",
+    "createdOn": "2024-06-24T11:23:07.809Z",
+    "lastUpdated": "2024-06-24T11:35:40.431Z",
+    "lastPublished": "2024-06-24T11:39:38.689Z"
+  },
+  {
+    "description": "Snowflake is a cloud data warehouse that can store and analyze all your data records in one place. It can automatically scale up/down its compute resources to load, integrate, and analyze data.",
+    "technologyLogo": {
+      "src": "/src/assets/webflow/667959f7f3983f33c483ad0e_untitled-15.png",
+      "alt": null,
+      "webflowFileId": "667959f7f3983f33c483ad0e"
+    },
+    "category": "Databases",
+    "name": "Snowflake",
+    "slug": "snowflake",
+    "status": {
+      "isDraft": false,
+      "isArchived": false,
+      "published": true,
+      "visibleOnLiveSite": true
+    },
+    "webflowId": "667957081ca5b1e5dfe816a9",
+    "createdOn": "2024-06-24T11:22:48.861Z",
+    "lastUpdated": "2024-06-24T11:35:20.963Z",
+    "lastPublished": "2024-06-24T11:39:38.689Z"
+  },
+  {
+    "description": "Docker takes away repetitive, mundane configuration tasks and is used throughout the development lifecycle for fast, easy and portable application development – desktop and cloud. Docker’s comprehensive end to end platform includes UIs, CLIs, APIs and security that are engineered to work together across the entire application delivery lifecycle",
+    "technologyLogo": {
+      "src": "/src/assets/webflow/667959ecf3983f33c483a603_untitled-9.png",
+      "alt": null,
+      "webflowFileId": "667959ecf3983f33c483a603"
+    },
+    "category": "Deployment",
+    "name": "Docker",
+    "slug": "docker",
+    "status": {
+      "isDraft": false,
+      "isArchived": false,
+      "published": true,
+      "visibleOnLiveSite": true
+    },
+    "webflowId": "667956f04856f38b85628ea0",
+    "createdOn": "2024-06-24T11:22:24.407Z",
+    "lastUpdated": "2024-06-24T11:35:10.945Z",
+    "lastPublished": "2024-06-24T11:39:38.689Z"
+  },
+  {
+    "description": "Git is a distributed version control system that tracks changes in any set of computer files, usually used for coordinating work among programmers collaboratively developing source code during software development. Its goals include speed, data integrity, and support for distributed, non-linear workflows.",
+    "technologyLogo": {
+      "src": "/src/assets/webflow/667959dab805ed1c38fe28a5_untitled-2.png",
+      "alt": null,
+      "webflowFileId": "667959dab805ed1c38fe28a5"
+    },
+    "category": "Software Development",
+    "name": "Git",
+    "slug": "git",
+    "status": {
+      "isDraft": false,
+      "isArchived": false,
+      "published": true,
+      "visibleOnLiveSite": true
+    },
+    "webflowId": "667956d7d0ca803fb08db0a8",
+    "createdOn": "2024-06-24T11:21:59.688Z",
+    "lastUpdated": "2024-06-24T11:34:53.141Z",
+    "lastPublished": "2024-06-24T11:39:38.689Z"
+  },
+  {
+    "description": "Plumber allows you to create a web API by merely decorating your existing R source code with roxygen2-like comments. The goal of vetiver is to provide fluent tooling to version, share, deploy, and monitor a trained model. Functions handle both recording and checking the model’s input data prototype, and predicting from a remote API endpoint. The vetiver package is extensible, with generics that can support many kinds of models, and available for both R and Python.",
+    "technologyLogo": {
+      "src": "/src/assets/webflow/667959d25fd9501bdb97121e_untitled-5.png",
+      "alt": null,
+      "webflowFileId": "667959d25fd9501bdb97121e"
+    },
+    "category": "Software Development",
+    "name": "Plumber & Vetiver",
+    "slug": "plumber-vetiver",
+    "status": {
+      "isDraft": false,
+      "isArchived": false,
+      "published": true,
+      "visibleOnLiveSite": false
+    },
+    "webflowId": "667956b71e4ba4f518e0a37b",
+    "createdOn": "2024-06-24T11:21:27.909Z",
+    "lastUpdated": "2024-06-24T11:34:44.277Z",
+    "lastPublished": "2024-06-24T11:39:38.689Z"
+  },
+  {
+    "description": "Data scientists use Posit Connect to securely share data products with decision-makers and automate time-consuming tasks with code. Publish the things you create in both R & Python, including interactive applications, documents, notebooks, and dashboards. Deploy models as APIs, and configure reports to run on a custom schedule.",
+    "technologyLogo": {
+      "src": "/src/assets/webflow/667959c747418562dd54d4c3_untitled-8.png",
+      "alt": null,
+      "webflowFileId": "667959c747418562dd54d4c3"
+    },
+    "category": "Deployment",
+    "name": "Posit Connect",
+    "slug": "posit-connect",
+    "status": {
+      "isDraft": false,
+      "isArchived": false,
+      "published": true,
+      "visibleOnLiveSite": true
+    },
+    "webflowId": "6679566688b05397737b3715",
+    "createdOn": "2024-06-24T11:20:06.148Z",
+    "lastUpdated": "2024-06-24T11:34:34.636Z",
+    "lastPublished": "2024-06-24T11:39:38.689Z"
+  },
+  {
+    "description": "Pandas is a fast, powerful, flexible and easy to use open source data analysis and manipulation tool, built on top of the Python programming language.",
+    "technologyLogo": {
+      "src": "/src/assets/webflow/66795ad4bd7e223622d8f41b_python-symbol.png",
+      "alt": null,
+      "webflowFileId": "66795ad4bd7e223622d8f41b"
+    },
+    "category": "Software Development",
+    "name": "Python | Pandas",
+    "slug": "python-pandas",
+    "status": {
+      "isDraft": false,
+      "isArchived": false,
+      "published": true,
+      "visibleOnLiveSite": true
+    },
+    "webflowId": "6679564ac0f074497c19a03b",
+    "createdOn": "2024-06-24T11:19:38.015Z",
+    "lastUpdated": "2024-06-24T11:39:02.737Z",
+    "lastPublished": "2024-06-24T11:39:38.689Z"
+  },
+  {
+    "description": "Shiny is an R package that makes it easy to build interactive web apps straight from R. You can host standalone apps on a webpage or embed them in R Markdown documents or build dashboards.",
+    "technologyLogo": {
+      "src": "/src/assets/webflow/667959aa06b54b45a6e80d8b_untitled-11.png",
+      "alt": null,
+      "webflowFileId": "667959aa06b54b45a6e80d8b"
+    },
+    "category": "Dashboards and Applications",
+    "name": "Shiny",
+    "slug": "shiny",
+    "status": {
+      "isDraft": false,
+      "isArchived": false,
+      "published": true,
+      "visibleOnLiveSite": true
+    },
+    "webflowId": "667955b6d7279b48d90ef408",
+    "createdOn": "2024-06-24T11:17:10.865Z",
+    "lastUpdated": "2024-06-24T11:34:04.507Z",
+    "lastPublished": "2024-06-24T11:39:38.689Z"
+  },
+  {
+    "description": "The tidyverse is an opinionated collection of R packages designed for data science. All packages share an underlying design philosophy, grammar, and data structures.",
+    "technologyLogo": {
+      "src": "/src/assets/webflow/6679599a87fbc21bdf261a41_untitled-1.png",
+      "alt": null,
+      "webflowFileId": "6679599a87fbc21bdf261a41"
+    },
+    "category": "Software Development",
+    "name": "Tidyverse",
+    "slug": "tidyverse",
+    "status": {
+      "isDraft": false,
+      "isArchived": false,
+      "published": true,
+      "visibleOnLiveSite": true
+    },
+    "webflowId": "667955605705f32df995289b",
+    "createdOn": "2024-06-24T11:15:44.849Z",
+    "lastUpdated": "2024-06-24T11:33:50.388Z",
+    "lastPublished": "2024-06-24T11:39:38.689Z"
+  }
+]

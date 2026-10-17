@@ -1,8 +1,27 @@
-.Rproj.user
-.Rhistory
-.RData
-.Ruserdata
+# build
+node_modules/
+dist/
+.astro/
+
+# env / secrets — never commit
+.env
+.env.*
+!.env.example
+
+# Webflow export output containing personal data (form submissions, raw API dumps).
+# The export script writes these OUTSIDE the repo by default; these patterns are a backstop.
+webflow-private-export/
+**/form-submissions*.csv
+.webflow-raw/
+webflow-export/
+
+# OS / editor
 .DS_Store
 Thumbs.db
-/public/
-/resources/
+.vscode/
+.idea/
+
+# test artifacts
+screenshots/
+test-results/
+playwright-report/
