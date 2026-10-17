@@ -1,0 +1,74 @@
+---
+import { Image } from 'astro:assets';
+import { requireImage } from '../lib/assets';
+
+// The four logos in the "Trusted by industry leaders" strip on the Webflow homepage.
+const logos = [
+  { name: 'PicnicHealth', file: '667aacc4e056e774db3596e8_picnichealth.svg' },
+  { name: 'Atara Biotherapeutics', file: '667aad97b54b663de29ab678_atara-1.png' },
+  { name: 'Outcomes4Me', file: '667aacc45b8fc80b91ccde22_o4m.png' },
+  { name: 'Spring Health', file: '667aacc5830456d71b243747_springhealth_logo.jpeg' },
+].map((l) => ({ ...l, img: requireImage(l.file) }));
+
+interface Props {
+  tone?: 'light' | 'dark';
+}
+const { tone = 'light' } = Astro.props;
+---
+
+<div class:list={['logos', `logos--${tone}`]}>
+  <p class="label">Trusted by industry leaders</p>
+  <ul>
+    {
+      logos.map((l) => (
+        <li>
+          <Image src={l.img} alt={l.name} height={44} densities={[1, 2]} />
+        </li>
+      ))
+    }
+  </ul>
+</div>
+
+<style>
+  .logos {
+    text-align: center;
+  }
+  .label {
+    font-size: 0.8rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    font-weight: 700;
+    color: var(--muted);
+    margin-bottom: 1.25rem;
+  }
+  .logos--dark .label {
+    color: #b9c5de;
+  }
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem clamp(1.5rem, 5vw, 3.5rem);
+  }
+  li {
+    display: grid;
+    place-items: center;
+    height: 64px;
+    padding: 0.6rem 1.1rem;
+    border-radius: 12px;
+    background: var(--white);
+  }
+  .logos--light li {
+    border: 1px solid var(--line);
+  }
+  img {
+    height: 40px;
+    width: auto;
+    max-width: 160px;
+    object-fit: contain;
+  }
+</style>

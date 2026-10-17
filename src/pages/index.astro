@@ -1,0 +1,619 @@
+---
+import { Image, getImage } from 'astro:assets';
+import Base from '../layouts/Base.astro';
+import Icon from '../components/Icon.astro';
+import ClientLogos from '../components/ClientLogos.astro';
+import Testimonials from '../components/Testimonials.astro';
+import CaseStudyCard from '../components/CaseStudyCard.astro';
+import CtaBand from '../components/CtaBand.astro';
+import { solutions } from '../data/solutions';
+import technologies from '../data/technologies.json';
+import { getCaseStudies } from '../lib/case-studies';
+import { requireImage, webflowFile, webflowImage } from '../lib/assets';
+
+const latest = (await getCaseStudies()).slice(0, 6);
+
+// Hero background video (Pexels, Nikita Ryumshin) — the Webflow transcodes, served locally.
+const heroMp4 = webflowFile('6655dff244e283f93e29f37a_pexels-nikita-ryumshin-1080p-transcode.mp4');
+const heroWebm = webflowFile('6655dff244e283f93e29f37a_pexels-nikita-ryumshin-1080p-transcode.webm');
+const heroPoster = await getImage({
+  src: requireImage('6655dff244e283f93e29f37a_pexels-nikita-ryumshin-1080p-poster-00001.jpg'),
+  width: 1600,
+  format: 'webp',
+});
+
+const problems = [
+  {
+    icon: '6acc9c8408b8632626410d0e',
+    text: 'Inefficient data analysis and integration processes are creating bottlenecks in your research pipeline, delaying critical discoveries.',
+  },
+  {
+    icon: '68d4f0194c22ce95f8b59739',
+    text: 'Your team is overwhelmed dealing with complex and disjointed data sources that should be driving insights, not creating headaches.',
+  },
+  {
+    icon: '68d773e74102afa60d9f4554',
+    text: 'You’re spending more time wrestling with data integration than focusing on what matters: advancing research that improves patients’ lives.',
+  },
+];
+
+const worksForYou = [
+  'Your best data scientists are focused on breakthrough discoveries, not repetitive analyses',
+  'Consistent, comparable results across your entire research portfolio',
+  'Every piece of data in your database actively generating insights and value',
+  'Scalable, reusable analytical infrastructure that accelerates future projects',
+  'Data quality assessments take minutes, not weeks',
+];
+const worksAgainstYou = [
+  'Your best talent wasting time rerunning the same analysis over and over',
+  'Incompatible ‘apples to oranges’ analyses from the same team in the same organization creating confusion',
+  'Valuable data sitting unused in databases - generating zero insights or competitive advantage',
+  'Single-purpose scripts that require extensive QC and duplicate programming effort',
+  'Research bottlenecks that delay critical go/no-go decisions',
+];
+
+const steps = [
+  { title: 'Assess Your Data Landscape', text: 'Identify pain points.' },
+  { title: 'Build Powerful Systems', text: 'Create tailored, scalable solutions to make sense of your data.' },
+  { title: 'Receive Ongoing Insights', text: 'Build powerful systems and receive frictionless data insights.' },
+];
+
+const benefits = [
+  {
+    icon: '68d6b900ba0ac6ed02a5e076',
+    title: 'Accelerate Time-to-Insight (Up to 90% Faster)',
+    text: 'Transform months-long manual analyses into automated processes that deliver results in hours or days. Faster go/no-go decisions and quicker regulatory responses.',
+  },
+  {
+    icon: '68d6b90092587c67059744aa',
+    title: 'Make Complex Data Accessible to Non-Technical Teams',
+    text: 'Build low-code/no-code tools that allow clinical and business teams to self-serve insights. Eliminate bottlenecks and democratize data access.',
+  },
+  {
+    icon: '68d6b90000d1d54de2567117',
+    title: 'Build Once, Use Forever',
+    text: 'Every solution is modular, documented, and designed for reuse. Your investment compounds with each project adding to your reusable asset library.',
+  },
+  {
+    icon: '68d6b900b2a395babfd7ba1c',
+    title: 'Deep Healthcare Domain Expertise',
+    text: '30+ years of quantitative science experience working with all major commercially available healthcare datasets. We speak RWD, clinical trials, HEOR, and regulatory submissions: no ramp-up needed.',
+    note: 'The difference: Domain expertise that turns complex healthcare data into regulatory-ready insights that actually get used.',
+  },
+  {
+    icon: '68d777ffb132e33ace555927',
+    title: 'Code-First Solutions Built to Scale',
+    text: 'You shouldn’t have to choose between cost and quality in your data science. Our code-first, open-source approach delivers both: scalable solutions that reduce overhead while maintaining the rigor your stakeholders demand.',
+  },
+  {
+    icon: '68d7784655de266d70c30991',
+    title: 'Harness the Power of Real-World Data',
+    text: 'Your real-world data holds the key to breakthrough insights. Whether you’re curating patient cohorts or presenting to regulatory teams, you need analytics that bridge the gap between data complexity and stakeholder clarity.',
+  },
+];
+
+// Technologies, grouped as on the Webflow homepage.
+const techGroups = [
+  ['Software Development', 'Software Development'],
+  ['Databases', 'Databases'],
+  ['Deployment', 'Deployment'],
+  ['Reporting', 'Reporting'],
+  ['Dashboards and Applications', 'Dashboards & Applications'],
+  ['Reproducible Science', 'Reproducible Science'],
+].map(([category, label]) => ({
+  label,
+  items: technologies
+    .filter((t) => t.category === category)
+    .map((t) => ({ name: t.name, logo: webflowImage(t.technologyLogo?.src) })),
+}));
+const dataModels = technologies.filter((t) => t.category === 'Data Model Expertise').map((t) => t.name);
+const domains = technologies.filter((t) => t.category === 'Domains Supported').map((t) => t.name);
+---
+
+<Base headerTone="dark">
+  <section class="hero" aria-labelledby="hero-title">
+    <video
+      class="hero-video"
+      muted
+      loop
+      playsinline
+      preload="none"
+      poster={heroPoster.src}
+      aria-hidden="true"
+      data-hero-video
+    >
+      <source src={heroWebm} type="video/webm" />
+      <source src={heroMp4} type="video/mp4" />
+    </video>
+    <div class="hero-shade" aria-hidden="true"></div>
+    <div class="wrap hero-inner">
+      <h1 id="hero-title">Data Elevated</h1>
+      <p class="hero-sub">Scale your insight generation to unlock the real power of real-world data</p>
+      <div class="btn-row">
+        <a class="btn btn--primary" href="/contact">Schedule Discovery Session</a>
+        <a class="btn btn--ghost-light" href="#solutions">Our Services</a>
+        <a class="hero-link" href="#testimonials">What Our Clients Say</a>
+      </div>
+      <button class="video-toggle" type="button" data-video-toggle hidden aria-pressed="false">
+        <span data-label>Pause background video</span>
+      </button>
+    </div>
+    <div class="wrap hero-logos">
+      <ClientLogos tone="dark" />
+    </div>
+  </section>
+
+  <section class="section" aria-labelledby="problem-title">
+    <div class="wrap">
+      <div class="section-head section-head--center">
+        <h2 id="problem-title">
+          You shouldn't have to struggle with data integration when breakthrough discoveries are waiting to be unlocked.
+        </h2>
+      </div>
+      <ul class="grid grid--3 plain">
+        {
+          problems.map((p) => (
+            <li class="card problem">
+              <span class="icon-badge">
+                <Icon name={p.icon} />
+              </span>
+              <p>{p.text}</p>
+            </li>
+          ))
+        }
+      </ul>
+    </div>
+  </section>
+
+  <section class="section section--surface" aria-labelledby="dilemma-title">
+    <div class="wrap">
+      <div class="section-head section-head--center">
+        <h2 id="dilemma-title">The Data Dilemma</h2>
+      </div>
+      <div class="grid grid--2">
+        <div class="card dilemma dilemma--for">
+          <h3>When Data Works For You:</h3>
+          <ul class="check-list">{worksForYou.map((t) => <li>{t}</li>)}</ul>
+        </div>
+        <div class="card dilemma">
+          <h3>When Data Works Against You:</h3>
+          <ul class="check-list x-list">{worksAgainstYou.map((t) => <li>{t}</li>)}</ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" aria-labelledby="steps-title">
+    <div class="wrap steps-layout">
+      <div>
+        <p class="eyebrow">How we work</p>
+        <h2 id="steps-title">Simplify your data journey in three simple steps.</h2>
+        <a class="btn btn--primary" href="/contact">Schedule Discovery Session</a>
+      </div>
+      <ol class="steps">
+        {
+          steps.map((s, i) => (
+            <li>
+              <span class="step-num" aria-hidden="true">
+                {i + 1}
+              </span>
+              <div>
+                <h3>{s.title}</h3>
+                <p>{s.text}</p>
+              </div>
+            </li>
+          ))
+        }
+      </ol>
+    </div>
+  </section>
+
+  <section class="section section--surface" aria-labelledby="why-title">
+    <div class="wrap">
+      <div class="section-head">
+        <h2 id="why-title">Why Choose Plinth</h2>
+      </div>
+      <ul class="grid grid--3 plain">
+        {
+          benefits.map((b) => (
+            <li class="card">
+              <span class="icon-badge">
+                <Icon name={b.icon} />
+              </span>
+              <h3>{b.title}</h3>
+              <p>{b.text}</p>
+              {b.note && <p class="note">{b.note}</p>}
+            </li>
+          ))
+        }
+      </ul>
+    </div>
+  </section>
+
+  <section class="section" id="solutions" aria-labelledby="solutions-title">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow">Solutions</p>
+        <h2 id="solutions-title">Custom Solutions that Fit You Best</h2>
+      </div>
+      <ul class="grid grid--3 plain">
+        {
+          solutions.map((s) => (
+            <li class="card solution">
+              <span class="icon-badge">
+                <Icon name={s.icon} />
+              </span>
+              <h3>{s.name}</h3>
+              <p>{s.summary}</p>
+              <p class="meta">{s.listLabel}</p>
+              <ul class="check-list">
+                {s.items.slice(0, 4).map((item) => (
+                  <li>{item}</li>
+                ))}
+              </ul>
+              <a class="link-arrow" href={`/solutions#${s.id}`}>
+                All {s.items.length} {s.listLabel.toLowerCase()}
+                <span class="sr-only"> of {s.name}</span>
+              </a>
+            </li>
+          ))
+        }
+        <li class="card solution solution--more">
+          <h3>Interested in more details?</h3>
+          <div class="btn-row">
+            <a class="btn btn--light" href="/solutions">Read more</a>
+            <a class="btn btn--ghost-light" href="/contact">Contact Us</a>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="section section--surface" aria-labelledby="stories-title">
+    <div class="wrap">
+      <div class="section-head split">
+        <div>
+          <p class="eyebrow">Case studies</p>
+          <h2 id="stories-title">Real Results, Real Stories of Our Clients</h2>
+          <p>
+            Choosing the right strategic data partner can be tough — trust us, we’ve been there. That’s why, when you
+            choose to work with Plinth, we’re committed to giving you the kind of partnership experience we always wish
+            we’d had. Here’s what that means to us.
+          </p>
+        </div>
+        <a class="btn btn--secondary" href="/case-studies">View all case studies</a>
+      </div>
+      <div class="grid grid--3">
+        {latest.map((entry) => <CaseStudyCard entry={entry} />)}
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="testimonials" aria-labelledby="testimonials-title">
+    <div class="wrap">
+      <div class="section-head section-head--center">
+        <p class="eyebrow">Testimonials</p>
+        <h2 id="testimonials-title">Voices of Success from Our Satisfied Clients</h2>
+      </div>
+      <Testimonials />
+    </div>
+  </section>
+
+  <section class="section section--surface" id="technologies" aria-labelledby="tech-title">
+    <div class="wrap">
+      <div class="section-head">
+        <h2 id="tech-title">Technologies we use</h2>
+        <ul class="pills" aria-label="Focus areas">
+          <li class="pill">Real World Evidence</li>
+          <li class="pill">Reproducible Scientific Software</li>
+          <li class="pill">Systems Thinking</li>
+        </ul>
+      </div>
+      <div class="grid grid--3">
+        {
+          techGroups.map((g) => (
+            <div class="card tech">
+              <h3>{g.label}</h3>
+              <ul>
+                {g.items.map((t) => (
+                  <li>
+                    {t.logo ? (
+                      <Image src={t.logo} alt="" width={28} height={28} densities={[1, 2]} />
+                    ) : (
+                      <span class="logo-fallback" aria-hidden="true" />
+                    )}
+                    {t.name}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))
+        }
+      </div>
+      <div class="grid grid--2 expertise">
+        <div>
+          <h3>Data Model Expertise</h3>
+          <ul class="check-list cols">{dataModels.map((d) => <li>{d}</li>)}</ul>
+        </div>
+        <div>
+          <h3>Domains Supported</h3>
+          <ul class="check-list">{domains.map((d) => <li>{d}</li>)}</ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <CtaBand />
+</Base>
+
+<script>
+  // Play the hero video only when motion is welcome; always offer a pause control (WCAG 2.2.2).
+  const video = document.querySelector<HTMLVideoElement>('[data-hero-video]');
+  const toggle = document.querySelector<HTMLButtonElement>('[data-video-toggle]');
+  const label = toggle?.querySelector('[data-label]');
+  const reduce = window.matchMedia('(prefers-reduced-motion: reduce)');
+  const saveData = (navigator as Navigator & { connection?: { saveData?: boolean } }).connection?.saveData;
+  const setState = (playing: boolean) => {
+    toggle?.setAttribute('aria-pressed', String(!playing));
+    if (label) label.textContent = playing ? 'Pause background video' : 'Play background video';
+  };
+  if (video && toggle) {
+    toggle.hidden = false;
+    if (!reduce.matches && !saveData) video.play().then(() => setState(true), () => setState(false));
+    else setState(false);
+    toggle.addEventListener('click', () => {
+      if (video.paused) video.play().then(() => setState(true));
+      else {
+        video.pause();
+        setState(false);
+      }
+    });
+  }
+</script>
+
+<style>
+  .plain {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  /* Hero */
+  .hero {
+    position: relative;
+    isolation: isolate;
+    min-height: min(92vh, 860px);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding-top: 9rem;
+    background: var(--navy);
+    color: #d5def0;
+    overflow: hidden;
+  }
+  .hero-video,
+  .hero-shade {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+  }
+  .hero-video {
+    object-fit: cover;
+  }
+  .hero-shade {
+    background:
+      linear-gradient(180deg, rgb(11 23 48 / 55%) 0%, rgb(11 23 48 / 70%) 55%, var(--navy) 100%),
+      radial-gradient(ellipse at 20% 40%, rgb(31 86 214 / 35%), transparent 60%);
+  }
+  .hero-inner {
+    padding-bottom: 3.5rem;
+  }
+  .hero h1 {
+    color: var(--white);
+    font-size: clamp(3rem, 8vw, 6rem);
+    margin-bottom: 0.25em;
+  }
+  .hero .eyebrow {
+    color: var(--accent);
+  }
+  .hero-sub {
+    font-size: clamp(1.2rem, 2.2vw, 1.55rem);
+    max-width: 34ch;
+    color: #e6ecf8;
+    margin-bottom: 2rem;
+  }
+  .hero-link {
+    color: var(--white);
+    font-weight: 650;
+    padding: 0.75rem 0.5rem;
+  }
+  .hero-link:hover {
+    color: var(--accent);
+  }
+  .video-toggle {
+    margin-top: 1.75rem;
+    background: none;
+    border: 0;
+    padding: 0.25rem 0;
+    color: #b9c5de;
+    font: inherit;
+    font-size: 0.85rem;
+    text-decoration: underline;
+    text-underline-offset: 0.2em;
+    cursor: pointer;
+  }
+  .hero-logos {
+    padding-block: 2rem 3rem;
+    border-top: 1px solid rgb(255 255 255 / 10%);
+  }
+
+  .problem p {
+    font-size: 1.08rem;
+    color: var(--ink-2);
+  }
+
+  .dilemma h3 {
+    margin-bottom: 1.25rem;
+  }
+  .dilemma--for {
+    border-top: 4px solid var(--brand);
+  }
+
+  /* Steps */
+  .steps-layout {
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    gap: clamp(2rem, 6vw, 5rem);
+    align-items: start;
+  }
+  .steps {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    gap: 1rem;
+  }
+  .steps li {
+    display: flex;
+    gap: 1.25rem;
+    align-items: flex-start;
+    padding: 1.5rem;
+    border: 1px solid var(--line);
+    border-radius: var(--radius-lg);
+  }
+  .steps h3 {
+    margin-bottom: 0.25rem;
+  }
+  .steps p {
+    margin: 0;
+  }
+  .step-num {
+    flex-shrink: 0;
+    display: grid;
+    place-items: center;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background: var(--brand);
+    color: var(--white);
+    font-weight: 700;
+  }
+
+  .note {
+    margin-top: 1rem;
+    padding-top: 1rem;
+    border-top: 1px solid var(--line);
+    font-weight: 600;
+    color: var(--ink);
+  }
+
+  /* Solutions */
+  .solution {
+    display: flex;
+    flex-direction: column;
+  }
+  .solution .icon-badge {
+    color: var(--brand);
+  }
+  .solution .meta {
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    font-size: 0.78rem;
+    margin: 0.5rem 0 0.75rem;
+  }
+  .solution .check-list {
+    margin-bottom: 1.5rem;
+  }
+  .solution .link-arrow {
+    margin-top: auto;
+  }
+  .solution--more {
+    background: var(--navy);
+    border-color: var(--navy);
+    color: #d5def0;
+    justify-content: center;
+  }
+  .solution--more h3 {
+    color: var(--white);
+  }
+  .icon-badge {
+    color: var(--brand);
+  }
+
+  .split {
+    max-width: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    gap: 2rem;
+    flex-wrap: wrap;
+  }
+  .split > div {
+    max-width: 720px;
+  }
+
+  /* Technologies */
+  .pills {
+    list-style: none;
+    padding: 0;
+    margin: 1rem 0 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+  .tech h3 {
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+  }
+  .tech ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    gap: 0.65rem;
+  }
+  .tech li {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    color: var(--ink);
+    font-weight: 550;
+  }
+  .tech img,
+  .logo-fallback {
+    width: 28px;
+    height: 28px;
+    object-fit: contain;
+    border-radius: 6px;
+  }
+  .logo-fallback {
+    background: var(--brand-soft);
+  }
+  .expertise {
+    margin-top: 3rem;
+  }
+  .expertise h3 {
+    font-size: 1.15rem;
+  }
+  .cols {
+    columns: 2 220px;
+    display: block;
+  }
+  .cols li {
+    margin-bottom: 0.55rem;
+    break-inside: avoid;
+  }
+
+  @media (max-width: 860px) {
+    .steps-layout {
+      grid-template-columns: 1fr;
+    }
+    .hero {
+      min-height: auto;
+      padding-top: 7.5rem;
+    }
+  }
+</style>

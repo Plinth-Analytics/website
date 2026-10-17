@@ -1,0 +1,54 @@
+---
+interface Props {
+  title?: string;
+  text?: string;
+}
+const {
+  title = 'Engage with our team of experts for a tailored solution.',
+  text = 'We work at the intersection of Pharma, Real World Data, and Data Science to help our clients drive innovation and deliver impactful solutions.',
+} = Astro.props;
+---
+
+<section class="section section--tight" aria-labelledby="cta-title">
+  <div class="wrap">
+    <div class="band">
+      <div>
+        <h2 id="cta-title">{title}</h2>
+        <p>{text}</p>
+      </div>
+      <div class="btn-row">
+        <a class="btn btn--light" href="/contact">Schedule Discovery Session</a>
+        <a class="btn btn--ghost-light" href="/case-studies">See our case studies</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .band {
+    display: grid;
+    grid-template-columns: 1.5fr auto;
+    gap: 2rem;
+    align-items: center;
+    padding: clamp(2rem, 5vw, 3.5rem);
+    border-radius: var(--radius-lg);
+    color: #d5def0;
+    background:
+      radial-gradient(ellipse at 100% 0%, rgb(31 86 214 / 55%), transparent 55%),
+      radial-gradient(ellipse at 0% 100%, rgb(127 176 255 / 18%), transparent 50%),
+      var(--navy);
+  }
+  h2 {
+    color: var(--white);
+    font-size: clamp(1.6rem, 3vw, 2.25rem);
+  }
+  p {
+    margin: 0;
+    max-width: 60ch;
+  }
+  @media (max-width: 820px) {
+    .band {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

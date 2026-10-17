@@ -1,0 +1,133 @@
+---
+import Base from '../layouts/Base.astro';
+import PageHero from '../components/PageHero.astro';
+import Icon from '../components/Icon.astro';
+import jobs from '../data/jobs.json';
+
+// Only published Webflow "Open Jobs" items are exported (both are drafts today).
+const openJobs = (jobs as { name: string; slug: string; status: { published: boolean } }[]).filter(
+  (j) => j.status.published,
+);
+const perks = [
+  'Fully Remote',
+  'Flexible Hours',
+  'Full-time',
+  '100% Healthcare coverage',
+  'Unlimited PTO',
+  '401K Match',
+  '5 full weeks of company closure',
+  'Company-provided equipment',
+  'Profit-based bonus',
+];
+---
+
+<Base
+  title="Careers"
+  description="At Plinth, we work hard to improve lives by elevating your data. We are a bootstrapped company, full of high-energy people, committed to excellence and respect above everything else."
+>
+  <PageHero
+    eyebrow="Careers"
+    title="We’re on a mission to find the best talent"
+    lead="If you think you may be a good fit, but don't see your role listed below, please reach out regardless. We are excited to meet you."
+  />
+
+  <section class="section" aria-labelledby="culture-title">
+    <div class="wrap grid grid--2 culture">
+      <div>
+        <h2 id="culture-title">Life at Plinth</h2>
+        <p class="lead">
+          At Plinth, we work hard to improve lives by elevating your data. We are a bootstrapped company, full of
+          high-energy people, committed to excellence and respect above everything else.
+        </p>
+      </div>
+      <ul class="perks">
+        {
+          perks.map((p) => (
+            <li>
+              <span class="perk-icon">
+                <Icon name="66585dee55752f58316da1af" size={20} />
+              </span>
+              {p}
+            </li>
+          ))
+        }
+      </ul>
+    </div>
+  </section>
+
+  <section class="section section--surface" aria-labelledby="jobs-title">
+    <div class="wrap wrap--narrow">
+      <h2 id="jobs-title">Apply today to join a successful team</h2>
+      {
+        openJobs.length ? (
+          <ul class="jobs">
+            {openJobs.map((j) => (
+              <li class="card">
+                <h3>{j.name}</h3>
+              </li>
+            ))}
+          </ul>
+        ) : (
+          <div class="card empty">
+            <p>
+              <strong>No open positions at the moment.</strong> Check again soon.
+            </p>
+            <a class="btn btn--primary" href="/contact">
+              Contact Us
+            </a>
+          </div>
+        )
+      }
+    </div>
+  </section>
+</Base>
+
+<style>
+  .culture {
+    align-items: center;
+  }
+  .perks {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 0.75rem;
+  }
+  .perks li {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.9rem 1rem;
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    font-weight: 600;
+    color: var(--ink);
+  }
+  .perk-icon {
+    display: grid;
+    place-items: center;
+    flex-shrink: 0;
+    width: 36px;
+    height: 36px;
+    border-radius: 10px;
+    background: var(--brand-soft);
+    color: var(--brand);
+  }
+  .empty {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+  }
+  .empty p {
+    margin: 0;
+  }
+  .jobs {
+    list-style: none;
+    padding: 0;
+    display: grid;
+    gap: 1rem;
+  }
+</style>

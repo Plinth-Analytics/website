@@ -1,0 +1,57 @@
+---
+import Base from '../layouts/Base.astro';
+import PageHero from '../components/PageHero.astro';
+import { CONTACT_EMAIL } from '../lib/site';
+---
+
+<!-- Text of the "Privacy Policy" panel on the Webflow About page, with its lists restored. -->
+<Base title="Privacy Policy" description="How Plinth Analytics collects, uses, and shares personal data.">
+  <PageHero eyebrow="Legal" title="Privacy Policy" />
+  <section class="section">
+    <div class="wrap wrap--narrow prose">
+      <p>
+        Plinth Analytics (hereinafter "we" or "us") is committed to protecting the personal data of our customers,
+        partners, and users who interact with our online services, including Google Ads. This privacy policy outlines
+        how we collect, use, and share your personal data. We collect the following types of personal data:
+      </p>
+      <ul>
+        <li>When provided: account information such as name, email, Job Title, Company.</li>
+        <li>User behavior: clicks, conversions, and impressions from users who interact with our ads.</li>
+      </ul>
+      <p>
+        We use this data to provide you with targeted advertising, track the effectiveness of our campaigns, and improve
+        your user experience.
+      </p>
+      <p>We may use your personal data for various purposes, including:</p>
+      <ul>
+        <li>Delivering targeted ads based on your interests and behavior.</li>
+        <li>Analyzing the effectiveness of our ad campaigns.</li>
+        <li>Improving user experience by optimizing ad placement and content.</li>
+      </ul>
+      <p>We will only share your personal data with law enforcement agencies if requested (as required by law).</p>
+      <p>We take the security of your personal data seriously. We implement various security measures, including:</p>
+      <ul>
+        <li>Secure servers and networks.</li>
+        <li>Regular software updates and patches.</li>
+        <li>Employee training on data protection best practices.</li>
+      </ul>
+      <p>As a data subject, you have certain rights under applicable laws, including:</p>
+      <ul>
+        <li>The right to access your personal data.</li>
+        <li>The right to correct or update your personal data.</li>
+        <li>The right to object to the processing of your personal data.</li>
+        <li>The right to erase (delete) your personal data.</li>
+      </ul>
+      <p>To exercise these rights, please contact us at <a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a>.</p>
+      <p>
+        If you have any questions about this privacy policy or concerns regarding our handling of personal data, please
+        contact us: Email: <a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a>
+      </p>
+      <p>
+        This privacy policy is effective as of July 27, 2024. We may update this policy from time to time. If we make
+        any material changes to the policy, we will notify you through our website or by other means. By using Google
+        Ads, you acknowledge that you have read, understood, and agreed to the terms of this privacy policy.
+      </p>
+    </div>
+  </section>
+</Base>

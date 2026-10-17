@@ -1,0 +1,30 @@
+{
+  "name": "plinth-website",
+  "private": true,
+  "type": "module",
+  "version": "1.0.0",
+  "engines": {
+    "node": ">=22.22.0"
+  },
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "check": "astro check",
+    "export:webflow": "NODE_USE_ENV_PROXY=1 node scripts/export-webflow.mjs",
+    "check:links": "node scripts/check-links.mjs",
+    "check:dist": "node scripts/check-dist.mjs",
+    "check:redirects": "node scripts/check-redirects.mjs",
+    "check:a11y": "node scripts/check-a11y.mjs"
+  },
+  "dependencies": {
+    "@astrojs/sitemap": "^3.7.4",
+    "astro": "^7.4.0"
+  },
+  "devDependencies": {
+    "axe-core": "^4.14.0",
+    "playwright": "^1.56.1",
+    "turndown": "^7.2.4",
+    "turndown-plugin-gfm": "^1.0.2"
+  }
+}

@@ -1,0 +1,118 @@
+---
+import '../styles/global.css';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import {
+  SITE_NAME,
+  LEGAL_NAME,
+  DEFAULT_TITLE,
+  DEFAULT_DESCRIPTION,
+  OG_IMAGE,
+  GA_MEASUREMENT_ID,
+  GOOGLE_ADS_ID,
+  LINKEDIN_URL,
+  CONTACT_EMAIL,
+} from '../lib/site';
+
+interface Props {
+  title?: string;
+  description?: string;
+  /** Absolute or root-relative image for social cards; defaults to the site card. */
+  image?: { src: string; width?: number; height?: number; alt?: string };
+  type?: 'website' | 'article';
+  noindex?: boolean;
+  /** Extra JSON-LD objects for this page. */
+  jsonLd?: Record<string, unknown>[];
+  /** Header style for pages that open on a dark hero. */
+  headerTone?: 'light' | 'dark';
+}
+
+const {
+  title,
+  description = DEFAULT_DESCRIPTION,
+  image = OG_IMAGE,
+  type = 'website',
+  noindex = false,
+  jsonLd = [],
+  headerTone = 'light',
+} = Astro.props;
+
+const fullTitle = title ? `${title} | ${SITE_NAME}` : DEFAULT_TITLE;
+const canonical = new URL(Astro.url.pathname.replace(/\/$/, '') || '/', Astro.site).href;
+const imageUrl = new URL(image.src, Astro.site).href;
+const analyticsIds = [GA_MEASUREMENT_ID, GOOGLE_ADS_ID].filter(Boolean);
+
+const orgLd = {
+  '@context': 'https://schema.org',
+  '@type': 'Organization',
+  name: LEGAL_NAME,
+  alternateName: SITE_NAME,
+  url: Astro.site?.href,
+  logo: new URL('/apple-touch-icon.png', Astro.site).href,
+  email: CONTACT_EMAIL,
+  foundingDate: '2022',
+  sameAs: [LINKEDIN_URL],
+};
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <script is:inline>document.documentElement.classList.add('js');</script>
+    <title>{fullTitle}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonical} />
+    {noindex && <meta name="robots" content="noindex, follow" />}
+
+    <link rel="icon" href="/favicon.png" type="image/png" sizes="32x32" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <link rel="sitemap" href="/sitemap-index.xml" />
+    <meta name="theme-color" content="#0b1730" />
+    <link rel="preload" href="/fonts/figtree-var-latin.woff2" as="font" type="font/woff2" crossorigin />
+
+    <meta property="og:type" content={type} />
+    <meta property="og:site_name" content={SITE_NAME} />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:title" content={fullTitle} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={imageUrl} />
+    {image.width && <meta property="og:image:width" content={String(image.width)} />}
+    {image.height && <meta property="og:image:height" content={String(image.height)} />}
+    <meta property="og:image:alt" content={image.alt ?? fullTitle} />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={fullTitle} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={imageUrl} />
+    <meta name="twitter:image:alt" content={image.alt ?? fullTitle} />
+
+    <script is:inline type="application/ld+json" set:html={JSON.stringify([orgLd, ...jsonLd])} />
+
+    {
+      analyticsIds.length > 0 && (
+        <>
+          <script is:inline async src={`https://www.googletagmanager.com/gtag/js?id=${analyticsIds[0]}`} />
+          <script is:inline define:vars={{ analyticsIds }}>
+            window.dataLayer = window.dataLayer || [];
+            function gtag() {
+              dataLayer.push(arguments);
+            }
+            gtag('js', new Date());
+            analyticsIds.forEach((id) => gtag('config', id));
+          </script>
+        </>
+      )
+    }
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <Header tone={headerTone} />
+    <main id="main" tabindex="-1">
+      <slot />
+    </main>
+    <Footer />
+  </body>
+</html>

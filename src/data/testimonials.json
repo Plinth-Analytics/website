@@ -1,0 +1,154 @@
+[
+  {
+    "profileImage": null,
+    "jobTitle": "Cancer Epidemiologist | RWE Data Scientist at AstraZeneca",
+    "testimonialText": "Plinth took great depths to understand our needs and helped us identify gaps and scope out the specs for a Shiny app. Throughout the process, they maintained clear communication, welcomed feedback, and navigated our internal infrastructure expertly – all with exceptional technical capabilities, professionalism, and enthusiasm. The final deliverable far exceeded our expectations, and we look forward to collaborating them again!",
+    "linkedin": "https://www.linkedin.com/in/lisayklau/",
+    "orderNumber": null,
+    "name": "Lisa Lau",
+    "slug": "lisa-lau",
+    "status": {
+      "isDraft": true,
+      "isArchived": false,
+      "published": false,
+      "visibleOnLiveSite": true
+    },
+    "webflowId": "676450bdb44c4ac32c9f1dfe",
+    "createdOn": "2024-12-19T16:58:37.120Z",
+    "lastUpdated": "2026-03-31T20:31:03.843Z",
+    "lastPublished": "2025-09-26T20:42:42.390Z"
+  },
+  {
+    "profileImage": null,
+    "jobTitle": "Director RWE Data Scientist at AstraZeneca",
+    "testimonialText": "[I] partnered with Plinth Analytics to develop an R-Shiny App designed to manage a large number of RWE analysis cohorts created by my team and our stakeholders. This App enables RWE users to browse cohort metadata and explore analysis outputs interactively from individual cohort data, significantly enhancing the reusability and efficiency of our analytics pipeline. The Plinth team demonstrated a deep understanding of our needs and suggested innovative ideas to refine [the] original proposal, ultimately delivering a solution that exceeded expectations. Their communication and technical skills were exceptional, and they successfully implemented most of the features we desired. I look forward to collaborating with them more in the near future!",
+    "linkedin": "https://www.linkedin.com/in/ping-sun-b106b5b5/",
+    "orderNumber": 2,
+    "name": "Ping Sun",
+    "slug": "ping-sun",
+    "status": {
+      "isDraft": true,
+      "isArchived": false,
+      "published": false,
+      "visibleOnLiveSite": true
+    },
+    "webflowId": "676197827866aeca5b6d8ef8",
+    "createdOn": "2024-12-17T15:23:46.160Z",
+    "lastUpdated": "2026-03-31T20:30:50.703Z",
+    "lastPublished": "2025-09-29T16:08:53.965Z"
+  },
+  {
+    "profileImage": null,
+    "jobTitle": "Director/Principal Quantitative Scientist at Flatiron Health",
+    "testimonialText": "I worked with Plinth to conduct an analysis using real-world data to measure the representativeness of oncology clinical trials. Their deep knowledge of the intricacies of real-world data allowed them to immediately jump into the work without any wasted time. In addition to a thorough and rigorous analysis, Plinth delivered a reusable, scalable R package for us to use in future projects. Plinth went above and beyond, working hard to meet tight deadlines and communicating with us every step of the way. They also served as a thought partner, coming up with creative ideas for future work. Plinth really delivered at the intersection of analytic and technical expertise. I look forward to working with them again in the future!",
+    "linkedin": "https://www.linkedin.com/in/sandy-griffith-70861a95/",
+    "orderNumber": 1,
+    "name": "Sandy Griffith",
+    "slug": "sandy-griffith",
+    "status": {
+      "isDraft": false,
+      "isArchived": false,
+      "published": true,
+      "visibleOnLiveSite": true
+    },
+    "webflowId": "6674751ede047392e5403dfc",
+    "createdOn": "2024-06-20T18:29:50.078Z",
+    "lastUpdated": "2025-09-29T16:09:01.123Z",
+    "lastPublished": "2025-09-29T16:09:01.123Z"
+  },
+  {
+    "profileImage": null,
+    "jobTitle": "CEO, Bradley Hartmann & Co.",
+    "testimonialText": "We've been working with Plinth Analytics for the last year and a half and they've been a joy to work with. They're smart, they do what they say they're going to do, and most importantly, they're able to really help us identify patterns and insights in the data that we would never have been able to find ourselves. What’s most crucial for our company, we've been able to scale our business by offering unique customized dashboards that we made available for our clients to invest in. Our clients saved money, they've been more efficient and they've been thrilled with the results as have we!",
+    "linkedin": "https://www.linkedin.com/in/bradley-hartmann-6247ab7/",
+    "orderNumber": 3,
+    "name": "Bradley Hartmann",
+    "slug": "bradley-hartmann",
+    "status": {
+      "isDraft": false,
+      "isArchived": false,
+      "published": true,
+      "visibleOnLiveSite": true
+    },
+    "webflowId": "667474fcc2b65a976369875e",
+    "createdOn": "2024-06-20T18:29:16.048Z",
+    "lastUpdated": "2025-09-29T16:09:08.762Z",
+    "lastPublished": "2025-09-29T16:09:08.762Z"
+  },
+  {
+    "profileImage": null,
+    "jobTitle": "Sr. Director, Access and Outcomes at Atara Biotherapeutics",
+    "testimonialText": "We had a great experience with Plinth! They had great knowledge of the data and were able to “hit-the-ground running”. There was no wasted time (and money) of having them learn the data, or underestimating effort required. Their analyses were delivered on a secure website - making it easy to find. Internal decisions were easy to make due to the visual presentations and the sub-group data to support it. Their knowledge and expertise helped with interpreting the data and understanding key drivers. I look forward to working with them in the future.",
+    "linkedin": "https://www.linkedin.com/in/crystal-l-watson/",
+    "orderNumber": 4,
+    "name": "Crystal Watson",
+    "slug": "crystal-watson",
+    "status": {
+      "isDraft": false,
+      "isArchived": false,
+      "published": true,
+      "visibleOnLiveSite": true
+    },
+    "webflowId": "667474d5222515234ba626d7",
+    "createdOn": "2024-06-20T18:28:37.362Z",
+    "lastUpdated": "2025-09-29T16:09:11.877Z",
+    "lastPublished": "2025-09-29T16:09:11.877Z"
+  },
+  {
+    "profileImage": null,
+    "jobTitle": "MS, MB (ASCP) | Director of Clinical Research at Picnic Health",
+    "testimonialText": "Plinth listened to our needs, helped to scope out our entire RWD study, the plinth team identified gaps while ensuring me that he and his team not only could handle the work, but were so excited to do so! Fast forward a few months later, and the team are doing just that and more! They have demonstrated the highest professionalism and work ethic, while being excellent collaborators. I look forward to continued partnership with Plinth!",
+    "linkedin": "https://www.linkedin.com/in/victoria-devincenzo-ms-mb-ascp-375248b4/",
+    "orderNumber": 5,
+    "name": "Victoria DeVincenzo",
+    "slug": "victoria-devincenzo",
+    "status": {
+      "isDraft": true,
+      "isArchived": false,
+      "published": false,
+      "visibleOnLiveSite": true
+    },
+    "webflowId": "667474b4dbd66043d13c7ad5",
+    "createdOn": "2024-06-20T18:28:04.810Z",
+    "lastUpdated": "2026-03-31T20:37:22.796Z",
+    "lastPublished": "2025-09-29T16:09:14.798Z"
+  },
+  {
+    "profileImage": null,
+    "jobTitle": "Director of Data Science and Analytics at Spring Health",
+    "testimonialText": "Plinth was a fantastic thought partner for our team. They dove in deep with stakeholders, quickly understood our data and the core problems we were facing, put together an action plan with a novel solution and then delivered it on time as promised. Our team has already seen savings of >1k hours in manual work. They were communicative along the way, open to feedback, and integrated seamlessly into our technical team. We look forward to working with them again!",
+    "linkedin": "https://www.linkedin.com/in/john-zielinski/",
+    "orderNumber": 6,
+    "name": "John Zielinski",
+    "slug": "john-zielinski",
+    "status": {
+      "isDraft": false,
+      "isArchived": false,
+      "published": true,
+      "visibleOnLiveSite": true
+    },
+    "webflowId": "667474923c141c4ffe0f6569",
+    "createdOn": "2024-06-20T18:27:30.397Z",
+    "lastUpdated": "2025-09-29T16:07:29.709Z",
+    "lastPublished": "2025-09-29T16:07:29.709Z"
+  },
+  {
+    "profileImage": null,
+    "jobTitle": "PhD | Quantitative Sciences Lead at Picnic Health",
+    "testimonialText": "The tools Plinth built for our team allows us to replace an algorithm written for a single project with a general-purpose solution that can be applied across our whole database. This saves us hours of development and debugging time, and has provided us with an architecture for defining populations and generating reproducible metrics across all of our clinical datasets.",
+    "linkedin": "https://www.linkedin.com/in/emily-cibelli/",
+    "orderNumber": 7,
+    "name": "Emily Cibelli",
+    "slug": "emily-cibelli",
+    "status": {
+      "isDraft": false,
+      "isArchived": false,
+      "published": true,
+      "visibleOnLiveSite": true
+    },
+    "webflowId": "6674747351ce4c29412c7f6a",
+    "createdOn": "2024-06-20T18:26:59.052Z",
+    "lastUpdated": "2026-03-31T20:38:08.057Z",
+    "lastPublished": "2026-03-31T20:38:08.057Z"
+  }
+]

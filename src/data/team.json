@@ -1,0 +1,30 @@
+[
+  {
+    "image": {
+      "src": "/src/assets/webflow/6675a7df55aa6e11256b488b_667577f9f6d8702c1c767e38_kieran_0878.png",
+      "alt": null,
+      "webflowFileId": "6675a7df55aa6e11256b488b"
+    },
+    "jobTitle": "CEO",
+    "description": "Kieran is an enthusiastic and curious Data Scientist with a solid understanding of statistics, data visualization and modeling. Proficient in ETL and data mining to reveal trends and answer questions. Possesses a PhD in Computational Biology / Biomedical Informatics. Long time experienced in clinical RWD, Genomics, Systems Biology, and Software Engineering. Enjoys working on a team, and interfacing with clients and internal stakeholders. Passionate about leading high performing teams of incredible individuals. There is nothing better than achieving something together that we could not achieve alone.",
+    "sillyImage": {
+      "src": "/src/assets/webflow/6675a7e368356e245787e6ed_667579e170d4b077d5e8f91a_k_bw_laugh.png",
+      "alt": null,
+      "webflowFileId": "6675a7e368356e245787e6ed"
+    },
+    "linkedin": "https://www.linkedin.com/in/kieranmace/",
+    "order": 1,
+    "name": "Kieran Mace, PhD",
+    "slug": "kieran-mace",
+    "status": {
+      "isDraft": false,
+      "isArchived": false,
+      "published": true,
+      "visibleOnLiveSite": true
+    },
+    "webflowId": "6675a7ea95b52d418950b31a",
+    "createdOn": "2024-06-21T16:18:50.549Z",
+    "lastUpdated": "2024-06-27T17:41:42.873Z",
+    "lastPublished": "2024-06-27T17:42:25.024Z"
+  }
+]

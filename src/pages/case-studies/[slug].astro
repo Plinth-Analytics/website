@@ -1,0 +1,283 @@
+---
+import { Image } from 'astro:assets';
+import { render } from 'astro:content';
+import Base from '../../layouts/Base.astro';
+import CaseStudyCard from '../../components/CaseStudyCard.astro';
+import CtaBand from '../../components/CtaBand.astro';
+import { getCaseStudies, formatMonth, atAGlance, teaser, caseStudyUrl, type CaseStudy } from '../../lib/case-studies';
+import { getImage } from 'astro:assets';
+import { DEFAULT_DESCRIPTION } from '../../lib/site';
+
+export async function getStaticPaths() {
+  const all = await getCaseStudies();
+  return all.map((entry) => ({ params: { slug: entry.data.slug }, props: { entry, all } }));
+}
+
+interface Props {
+  entry: CaseStudy;
+  all: CaseStudy[];
+}
+const { entry, all } = Astro.props;
+const { data } = entry;
+const { Content, headings } = await render(entry);
+
+const glance = atAGlance(entry.body);
+const description = teaser(entry, 155) || DEFAULT_DESCRIPTION;
+const others = all.filter((e) => e.id !== entry.id).slice(0, 3);
+
+// Social card: the case study image if it has one (resized, local), else the site default.
+const og = data.blogImage
+  ? await getImage({ src: data.blogImage.src, width: 1200, format: 'jpg' })
+  : undefined;
+const ogImage = og ? { src: og.src, width: og.attributes.width as number, height: og.attributes.height as number, alt: data.title } : undefined;
+
+const articleLd = {
+  '@context': 'https://schema.org',
+  '@type': 'Article',
+  headline: data.title,
+  description,
+  datePublished: data.createdOn.toISOString(),
+  dateModified: data.lastUpdated.toISOString(),
+  author: { '@type': 'Organization', name: 'Plinth Analytics' },
+  publisher: { '@type': 'Organization', name: 'Plinth Analytics' },
+  mainEntityOfPage: new URL(caseStudyUrl(entry), Astro.site).href,
+  ...(og ? { image: new URL(og.src, Astro.site).href } : {}),
+};
+const breadcrumbLd = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Case Studies', item: new URL('/case-studies', Astro.site).href },
+    { '@type': 'ListItem', position: 2, name: data.title },
+  ],
+};
+const hasBody = headings.length > 0 || (entry.body ?? '').trim().length > 0;
+---
+
+<Base title={data.title} description={description} type="article" image={ogImage} jsonLd={[articleLd, breadcrumbLd]}>
+  <article>
+    <header class="cs-head">
+      <div class="wrap">
+        <nav aria-label="Breadcrumb" class="crumbs">
+          <ol>
+            <li><a href="/case-studies">Case Studies</a></li>
+            <li aria-current="page">{data.title}</li>
+          </ol>
+        </nav>
+        <p class="meta">
+          {data.category && <span class="pill">{data.category}</span>}
+          <time datetime={data.createdOn.toISOString()}>{formatMonth(data.createdOn)}</time>
+          {data.author && <span>by {data.author}</span>}
+        </p>
+        <h1>{data.title}</h1>
+        {data.shortDescription && <p class="lead">{data.shortDescription}</p>}
+      </div>
+    </header>
+
+    {
+      data.blogImage && (
+        <div class="wrap">
+          <figure class="cover">
+            <Image
+              src={data.blogImage.src}
+              alt={data.blogImage.alt ?? ''}
+              widths={[640, 960, 1280, 1600]}
+              sizes="(max-width: 1240px) 100vw, 1180px"
+              loading="eager"
+              fetchpriority="high"
+            />
+          </figure>
+        </div>
+      )
+    }
+
+    {
+      glance && (
+        <section class="wrap glance" aria-labelledby="glance-title">
+          <h2 id="glance-title" class="sr-only">
+            At a glance
+          </h2>
+          <ol>
+            <li>
+              <h3>Problem</h3>
+              <p>{glance.problem.text}</p>
+              <a href={`#${glance.problem.anchor}`} class="link-arrow">
+                Read the full problem
+              </a>
+            </li>
+            <li>
+              <h3>Approach</h3>
+              <p>{glance.approach.text}</p>
+              <a href={`#${glance.approach.anchor}`} class="link-arrow">
+                How we approached it
+              </a>
+            </li>
+            <li>
+              <h3>Outcome</h3>
+              <p>{glance.outcome.text}</p>
+              <a href={`#${glance.outcome.anchor}`} class="link-arrow">
+                See the impact
+              </a>
+            </li>
+          </ol>
+        </section>
+      )
+    }
+
+    <div class="wrap layout">
+      <div class="prose">
+        {hasBody && <Content />}
+      </div>
+      <aside class="aside" aria-label="Contact">
+        <div class="card">
+          <h2 class="aside-title">Do you have any questions?</h2>
+          <p>Engage with our team of experts for a tailored solution.</p>
+          <a class="btn btn--primary" href="/contact">Contact us</a>
+        </div>
+      </aside>
+    </div>
+  </article>
+
+  <section class="section section--surface" aria-labelledby="more-title">
+    <div class="wrap">
+      <div class="more-head">
+        <h2 id="more-title">More posts</h2>
+        <a class="link-arrow" href="/case-studies">All case studies</a>
+      </div>
+      <div class="grid grid--3">
+        {others.map((e) => <CaseStudyCard entry={e} />)}
+      </div>
+    </div>
+  </section>
+
+  <CtaBand />
+</Base>
+
+<style>
+  .cs-head {
+    padding-block: clamp(2rem, 5vw, 3.5rem) clamp(1.5rem, 4vw, 2.5rem);
+  }
+  .crumbs ol {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 1.5rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+    font-size: 0.92rem;
+    color: var(--muted);
+  }
+  .crumbs li + li::before {
+    content: '/';
+    margin-right: 0.4rem;
+  }
+  .crumbs li[aria-current] {
+    max-width: 50ch;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+  .meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    align-items: center;
+  }
+  h1 {
+    font-size: clamp(2rem, 4.4vw, 3.25rem);
+    max-width: 24ch;
+  }
+  .lead {
+    max-width: 62ch;
+  }
+  .cover {
+    margin: 0;
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    border: 1px solid var(--line);
+    background: var(--surface);
+  }
+  .cover img {
+    width: 100%;
+    max-height: 620px;
+    object-fit: contain;
+  }
+  .glance ol {
+    list-style: none;
+    padding: 0;
+    margin: clamp(2rem, 4vw, 3rem) 0 0;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+    counter-reset: g;
+  }
+  .glance li {
+    padding: 1.5rem;
+    border-radius: var(--radius-lg);
+    background: var(--surface);
+    border: 1px solid var(--line);
+    display: flex;
+    flex-direction: column;
+  }
+  .glance li:nth-child(3) {
+    background: var(--brand-soft);
+    border-color: #c8d8fb;
+  }
+  .glance h3 {
+    font-size: 0.8rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--brand-strong);
+    margin-bottom: 0.6rem;
+  }
+  .glance p {
+    color: var(--ink);
+    font-size: 1rem;
+    display: -webkit-box;
+    -webkit-line-clamp: 7;
+    line-clamp: 7;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+  .glance .link-arrow {
+    margin-top: auto;
+    font-size: 0.95rem;
+  }
+  .layout {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 300px;
+    gap: clamp(2rem, 6vw, 5rem);
+    padding-block: clamp(2.5rem, 6vw, 4rem) var(--section);
+  }
+  .prose {
+    max-width: 72ch;
+  }
+  .aside .card {
+    position: sticky;
+    top: 6.5rem;
+  }
+  .aside-title {
+    font-size: 1.2rem;
+  }
+  .more-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 1rem;
+    margin-bottom: 2rem;
+  }
+  .more-head h2 {
+    margin: 0;
+  }
+  @media (max-width: 960px) {
+    .layout {
+      grid-template-columns: 1fr;
+    }
+    .glance ol {
+      grid-template-columns: 1fr;
+    }
+    .aside .card {
+      position: static;
+    }
+  }
+</style>

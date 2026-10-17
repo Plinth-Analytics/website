@@ -1,0 +1,80 @@
+---
+import Base from '../layouts/Base.astro';
+import PageHero from '../components/PageHero.astro';
+import ContactForm from '../components/ContactForm.astro';
+import ClientLogos from '../components/ClientLogos.astro';
+import { CONTACT_EMAIL, LINKEDIN_URL } from '../lib/site';
+
+const steps = ['Assess Your Data Landscape', 'Build Powerful Systems', 'Receive Ongoing Insights'];
+---
+
+<Base
+  title="Contact Us"
+  description="Your inquiries, ideas, and collaboration opportunities are just a click away. Schedule a discovery session with Plinth."
+>
+  <PageHero
+    eyebrow="Contact us"
+    title="Schedule Discovery Session"
+    lead="Your inquiries, ideas, and collaboration opportunities are just a click away. Let's start the conversation."
+  />
+
+  <section class="section">
+    <div class="wrap layout">
+      <div class="card form-card">
+        <h2>Connect with ease</h2>
+        <ContactForm />
+      </div>
+      <aside aria-label="Other ways to reach us" class="side">
+        <div>
+          <h2 class="h3">Drop Us a Line</h2>
+          <p>Reach out and let's begin the dialogue</p>
+          <p><a href={`mailto:${CONTACT_EMAIL}?subject=Contact%20Website`}>{CONTACT_EMAIL}</a></p>
+          <p>
+            <a href={LINKEDIN_URL} rel="noopener" target="_blank"
+              >Follow us on LinkedIn<span class="sr-only"> (opens in a new tab)</span></a
+            >
+          </p>
+        </div>
+        <div>
+          <h2 class="h3">Simplify your data journey in three simple steps.</h2>
+          <ol class="steps">{steps.map((s) => <li>{s}</li>)}</ol>
+        </div>
+      </aside>
+    </div>
+  </section>
+
+  <section class="section section--tight section--surface">
+    <div class="wrap"><ClientLogos /></div>
+  </section>
+</Base>
+
+<style>
+  .layout {
+    display: grid;
+    grid-template-columns: 1.4fr 1fr;
+    gap: clamp(2rem, 5vw, 4rem);
+    align-items: start;
+  }
+  .form-card h2 {
+    font-size: 1.5rem;
+  }
+  .side {
+    display: grid;
+    gap: 2.5rem;
+  }
+  .h3 {
+    font-size: 1.25rem;
+  }
+  .steps {
+    margin: 0;
+    display: grid;
+    gap: 0.5rem;
+    font-weight: 600;
+    color: var(--ink);
+  }
+  @media (max-width: 860px) {
+    .layout {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

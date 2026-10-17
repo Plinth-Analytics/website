@@ -1,0 +1,306 @@
+---
+import { Image } from 'astro:assets';
+import Base from '../layouts/Base.astro';
+import PageHero from '../components/PageHero.astro';
+import ContactForm from '../components/ContactForm.astro';
+import CtaBand from '../components/CtaBand.astro';
+import team from '../data/team.json';
+import { requireImage, webflowImage } from '../lib/assets';
+import { CONTACT_EMAIL } from '../lib/site';
+
+const temple = requireImage('6674916d276315441a0f86be_plinth2.jpg');
+const supplierBadge = requireImage('68d55fb0f2aa1b312b4a3424_registererd-supplier-logo-license-agreement-1.png');
+const founder = team.find((m) => m.slug === 'kieran-mace')!;
+const founderPhoto = webflowImage(founder.image?.src)!;
+
+const reasons = [
+  'We’ve navigated the entire RWD ecosystem from both sides',
+  'Our code-first approach delivers scalable solutions that grow with you',
+  'We focus on milestone-based delivery that shows progress every step of the way',
+  'We provide comprehensive training so your team can maximize every solution',
+];
+---
+
+<Base
+  title="About"
+  description="Founded in 2022, Plinth Analytics exists to help pharmaceutical companies optimize real-world data for better research outcomes."
+>
+  <PageHero eyebrow="About Plinth" title="Your Trusted Guide for Real-World Data Success" />
+
+  <section class="section section--tight">
+    <div class="wrap">
+      <figure class="temple">
+        <Image
+          src={temple}
+          alt="Ancient Greek temple columns standing on their stone plinth"
+          widths={[640, 960, 1280, 1600]}
+          sizes="(max-width: 1240px) 100vw, 1180px"
+          loading="eager"
+          fetchpriority="high"
+        />
+      </figure>
+    </div>
+  </section>
+
+  <section class="section section--tight" aria-labelledby="challenges-title">
+    <div class="wrap two-col">
+      <h2 id="challenges-title">We Understand Your Data Challenges</h2>
+      <div>
+        <p class="lead">
+          Pharmaceutical companies like yours are sitting on goldmines of real-world data, but extracting meaningful
+          insights can feel overwhelming. Complex, disjointed data sources slow down your research and frustrate your
+          teams. You shouldn't have to struggle with data integration when what you really need is to accelerate
+          discoveries that improve patient lives.
+        </p>
+        <p>We understand how daunting complex data challenges can feel because we've been where you are.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--surface" aria-labelledby="mission-title">
+    <div class="wrap grid grid--2">
+      <div class="card">
+        <p class="eyebrow">Our Mission</p>
+        <h2 id="mission-title">Transform Your Data Into Actionable Insights</h2>
+        <p>
+          Founded in 2022, Plinth Analytics exists to help pharmaceutical companies optimize real-world data for better
+          research outcomes. We believe in the power of code-first, open-source solutions because they're the only way
+          to simultaneously reduce costs and increase quality while scaling with your research demands.
+        </p>
+      </div>
+      <div class="card partners">
+        <div>
+          <h2>Your Expert Analytics Partners</h2>
+          <p>
+            With over 50 years of combined experience, we have a proven track record of delivering customized data
+            solutions for biopharmaceutical research.
+          </p>
+          <p>
+            Our team has lived at both ends of the real-world data spectrum. We've worked inside health tech startups
+            that curate and generate RWD, and alongside large pharmaceutical and biotech companies that use RWD to
+            generate transformative insights. This unique perspective means we know exactly where the bottlenecks occur
+            and how to eliminate them.
+          </p>
+        </div>
+        <Image src={supplierBadge} alt="Scientist.com Registered Supplier" width={220} class="badge" />
+      </div>
+    </div>
+  </section>
+
+  <section class="section" aria-labelledby="founder-title">
+    <div class="wrap founder">
+      <div>
+        <dl class="stats">
+          <div>
+            <dt>Industry experience</dt>
+            <dd>35+ <span>years</span></dd>
+          </div>
+          <div>
+            <dt>Plinth Projects Delivered</dt>
+            <dd>25+</dd>
+          </div>
+        </dl>
+        <h2 id="founder-title">Founded by Kieran Mace, PhD</h2>
+        <p>
+          Founded by Kieran Mace, PhD, who has lived your exact challenges while leading data science teams at Genentech
+          and PicnicHealth. At Genentech, Kieran led multi-modal clinico-genomic analytics across oncology indications
+          and saw firsthand how brilliant scientific analyses often couldn't scale to production. At PicnicHealth, while
+          building the quantitative science function from scratch to a 9-person team, he witnessed the persistent gap
+          between complex real-world data and actionable insights.
+        </p>
+        <p>
+          After repeatedly seeing pharmaceutical and biotech teams struggle with the same data integration bottlenecks,
+          Kieran founded Plinth to solve the problem once and for all—bridging the science-engineering divide so your
+          team can focus on discoveries, not data headaches.
+        </p>
+      </div>
+      <figure class="person card" id="team">
+        <Image src={founderPhoto} alt={`Portrait of ${founder.name}`} widths={[360, 720]} sizes="360px" />
+        <figcaption>
+          <p class="person-name">{founder.name}</p>
+          <p class="meta">{founder.jobTitle}</p>
+          <p class="bio">{founder.description}</p>
+          {
+            founder.linkedin && (
+              <a href={founder.linkedin} rel="noopener" target="_blank">
+                LinkedIn<span class="sr-only"> profile of {founder.name} (opens in a new tab)</span>
+              </a>
+            )
+          }
+        </figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <section class="section section--surface" aria-labelledby="why-title">
+    <div class="wrap">
+      <div class="section-head">
+        <h2 id="why-title">Why Choose Plinth</h2>
+      </div>
+      <ol class="reasons">
+        {
+          reasons.map((r, i) => (
+            <li>
+              <span aria-hidden="true">{i + 1}</span>
+              <h3>{r}</h3>
+            </li>
+          ))
+        }
+      </ol>
+      <a class="btn btn--primary" href="#contact">Schedule Discovery Session</a>
+    </div>
+  </section>
+
+  <section class="section" id="contact" aria-labelledby="contact-title">
+    <div class="wrap grid grid--2 contact">
+      <div>
+        <p class="eyebrow">Contact us</p>
+        <h2 id="contact-title">Connect with ease</h2>
+        <p class="lead">
+          Your inquiries, ideas, and collaboration opportunities are just a click away. Let's start the conversation.
+        </p>
+        <div class="card drop">
+          <h3>Drop Us a Line</h3>
+          <p>Reach out and let's begin the dialogue</p>
+          <a href={`mailto:${CONTACT_EMAIL}?subject=Contact%20Website`}>{CONTACT_EMAIL}</a>
+        </div>
+      </div>
+      <div class="card">
+        <ContactForm id="about-contact" />
+      </div>
+    </div>
+  </section>
+
+  <CtaBand />
+</Base>
+
+<style>
+  .temple {
+    margin: 0;
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    aspect-ratio: 21 / 9;
+  }
+  .temple img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  .two-col {
+    display: grid;
+    grid-template-columns: 1fr 1.4fr;
+    gap: clamp(1.5rem, 5vw, 4rem);
+  }
+  .partners {
+    display: grid;
+    gap: 1.5rem;
+  }
+  .badge {
+    width: 200px;
+  }
+  .founder {
+    display: grid;
+    grid-template-columns: 1.4fr 1fr;
+    gap: clamp(2rem, 6vw, 5rem);
+    align-items: start;
+  }
+  .stats {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 220px));
+    gap: 1rem;
+    margin: 0 0 2.5rem;
+  }
+  .stats div {
+    display: flex;
+    flex-direction: column-reverse;
+    padding: 1.25rem 1.5rem;
+    border-radius: var(--radius-lg);
+    background: var(--surface);
+    border: 1px solid var(--line);
+  }
+  .stats dd {
+    margin: 0;
+    font-size: clamp(2.4rem, 5vw, 3.2rem);
+    font-weight: 700;
+    color: var(--brand);
+    line-height: 1.05;
+    letter-spacing: -0.03em;
+  }
+  .stats dd span {
+    font-size: 1.2rem;
+    letter-spacing: 0;
+  }
+  .stats dt {
+    color: var(--muted);
+    font-weight: 600;
+  }
+  .person {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+  }
+  .person img {
+    width: 100%;
+    aspect-ratio: 4 / 5;
+    object-fit: cover;
+    background: var(--surface);
+  }
+  .person figcaption {
+    padding: 1.4rem 1.5rem 1.6rem;
+  }
+  .person-name {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--ink);
+    margin: 0;
+  }
+  .bio {
+    font-size: 0.97rem;
+  }
+  .reasons {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 2.5rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 240px), 1fr));
+    gap: 1rem;
+  }
+  .reasons li {
+    padding: 1.5rem;
+    border-radius: var(--radius-lg);
+    background: var(--white);
+    border: 1px solid var(--line);
+  }
+  .reasons span {
+    display: grid;
+    place-items: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: var(--brand);
+    color: var(--white);
+    font-weight: 700;
+    margin-bottom: 1rem;
+  }
+  .reasons h3 {
+    font-size: 1.1rem;
+    margin: 0;
+  }
+  .contact {
+    align-items: start;
+  }
+  .drop {
+    margin-top: 1.5rem;
+    box-shadow: none;
+    background: var(--surface);
+  }
+  @media (max-width: 860px) {
+    .two-col,
+    .founder {
+      grid-template-columns: 1fr;
+    }
+    .temple {
+      aspect-ratio: 4 / 3;
+    }
+  }
+</style>
